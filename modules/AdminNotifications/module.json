@@ -1,0 +1,24 @@
+{
+    "name": "AdminNotifications",
+    "alias": "adminnotifications",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminNotifications\\Providers\\AdminNotificationsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/notifications",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "",
+        "position": 2800,
+        "name": "Manual Notifications",
+        "color": "#4c482d",
+        "icon": "fa-light fa-bell-on"
+    }
+}

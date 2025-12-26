@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appteamjoined",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppTeamJoined\\": "app/",
+            "Modules\\AppTeamJoined\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppTeamJoined\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppTeamJoined\\Tests\\": "tests/"
+        }
+    }
+}

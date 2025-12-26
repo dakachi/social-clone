@@ -1,0 +1,23 @@
+{
+    "name": "AppPublishingDraft",
+    "alias": "apppublishingdraft",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppPublishingDraft\\Providers\\AppPublishingDraftServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/publishing/draft",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Draft",
+        "color": "#b20e9b",
+        "icon": "fa-light fa-file-pen"
+    }
+}

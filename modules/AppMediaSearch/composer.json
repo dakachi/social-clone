@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appmediasearch",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppMediaSearch\\": "app/",
+            "Modules\\AppMediaSearch\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppMediaSearch\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppMediaSearch\\Tests\\": "tests/"
+        }
+    }
+}

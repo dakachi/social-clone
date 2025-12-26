@@ -1,0 +1,33 @@
+{
+    "name": "AdminAIConfiguration",
+    "alias": "adminaiconfiguration",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAIConfiguration\\Providers\\AdminAIConfigurationServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/ai-configuration",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/ai-configuration",
+                "name": "AI Configuration",
+                "position": 500000,
+                "icon": "fa-light fa-bell",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "name": "AdminBlogs",
+    "alias": "adminblogs",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminBlogs\\Providers\\AdminBlogsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/blogs",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 50000,
+        "name": "Blogs",
+        "color": "#8be4c4",
+        "icon": "fa-light fa-blog",
+        "sub_menu": [
+            {
+                "uri": "admin/blogs/update",
+                "name": "Add new",
+                "position": 10000,
+                "icon": "fa-light fa-blog",
+                "color": "#8ca712"
+            },
+            {
+                "uri": "admin/blogs",
+                "name": "View All Posts",
+                "position": 9000,
+                "color": "#cc1a81",
+                "icon": "fa-light fa-blog"
+            },
+            {
+                "uri": "admin/blogs/categories",
+                "name": "Manage Categories",
+                "position": 8000,
+                "icon": "fa-light fa-blog",
+                "color": "#1993d8"
+            },
+            {
+                "uri": "admin/blogs/tags",
+                "name": "Manage Tags",
+                "position": 7000,
+                "icon": "fa-light fa-blog",
+                "color": "#c30e1b"
+            }
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "AdminPaymentManualConfig",
+    "alias": "adminpaymentmanualconfig",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPaymentManualConfig\\Providers\\AdminPaymentManualConfigServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/payment/manual-config",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 5000,
+        "name": "Manual Payment Info",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-money-check-dollar-pen"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Subscription does not exist or already canceled\/deleted.": "Subscription does not exist or already canceled\/deleted.",
+    "Subscription canceled successfully.": "Subscription canceled successfully.",
+    "Paypal Recurring Configuration": "Paypal Recurring Configuration",
+    "Status": "Status",
+    "Enable": "Enable",
+    "Disable": "Disable",
+    "Environment": "Environment",
+    "Live": "Live",
+    "Sandbox": "Sandbox",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Webhook URL:": "Webhook URL:",
+    "Required events:": "Required events:",
+    "Close": "Close",
+    "Save changes": "Save changes",
+    "Paypal Recurring Payment": "Paypal Recurring Payment",
+    "Paypal Recurring": "Paypal Recurring"
+}

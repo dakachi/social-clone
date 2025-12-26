@@ -1,0 +1,136 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Colors
+$bg-body: #fefefe;
+$border-color: #EDF0F2;
+
+$black: #000;
+$white: #fff;
+$light: #fff;
+$light-active: #fcfcfc;
+$dark: #1e2129;
+$dark-active: #111318;
+$secondary: #f9f9f9;
+$secondary-active: #f9f9f9;
+$transparent: transparent !default;
+
+// Core Semantic Colors
+$blue: #675dff !default;
+$blue-active: darken($blue, 8%) !default;
+$blue-light: rgba($blue, 0.1) !default;
+
+$green: #22c55e !default;
+$green-active: darken($green, 8%) !default;
+
+$red: #ef4444 !default;
+$red-active: darken($red, 8%) !default;
+
+$brand: #f59e0b !default;
+$brand-active: darken($brand, 8%) !default;
+
+$orange: #f59e0b !default;
+$orange-active: darken($brand, 8%) !default;
+
+
+$purple: #7c3aed !default;
+$purple-active: darken($purple, 8%) !default;
+
+$indigo:  #6366f1 !default;
+$pink:    #ec4899 !default;
+$yellow:  #facc15 !default;
+$teal:    #14b8a6 !default;
+$cyan:    #22d3ee !default;
+
+$gray-100: #f9f9f9;
+$gray-200: #f1f1f4;
+$gray-300: #dbdfe9;
+$gray-400: #c4cada;
+$gray-500: #99a1b7;
+$gray-600: #78829d;
+$gray-700: #4b5675;
+$gray-800: #252f4a;
+$gray-900: #071437;
+
+$default-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, .09);
+$light-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .03);
+$blue-box-shadow: 0px 4px 12px 0px rgba($blue, .35);
+$green-box-shadow: 0px 4px 12px 0px rgba($green, .35);
+$red-box-shadow: 0px 4px 12px 0px rgba($red, .35);
+$purple-box-shadow: 0px 4px 12px 0px rgba($purple, .35);
+$orange-box-shadow: 0px 4px 12px 0px rgba($brand, .35);
+$dark-box-shadow: 0px 4px 12px 0px rgba($dark, .35);
+
+$card-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .03);
+$tooltip-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .03);
+$popover-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .03);
+$modal-box-shadow: 0px 10px 14px 0px rgba(15, 42, 81, .03);
+$drawer-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .03);
+$dropdown-box-shadow: 0px 7px 18px 0px rgba(0, 0, 0, .09);
+$input-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+
+$card-background-color: #fff;
+$tooltip-background-color: #0f1014;
+$popover-background-color: #fff;
+$modal-background-color: #fff;
+$drawer-background-color: #fff;
+$dropdown-background-color: #fff;
+$backdrop-background-color: rgba(0, 0, 0, .8);
+$table-head-background-color: $light-active;
+
+$card-border: 1px solid $gray-200;
+$table-border: 1px solid $gray-200;
+$dropdown-border: 1px solid $gray-200;
+$popover-border: 1px solid $gray-200;
+$tooltip-border: 0;
+
+$header-height: 70px;
+$zindex-1: 1000;
+$zindex-2: 2000;
+$zindex-3: 3000;
+$zindex-4: 4000;
+$zindex-5: 5000;
+$zindex-6: 6000;
+$zindex-7: 7000;
+$zindex-8: 8000;
+$zindex-9: 9000;
+
+$list-colors: (
+  "primary": $blue,
+  "success": $green,
+  "warning": $brand,
+  "danger":  $red,
+  "info":    $purple,
+  "brand":   $brand,
+  "indigo":  $indigo,
+  "pink":    $pink,
+  "yellow":  $yellow,
+  "teal":    $teal,
+  "cyan":    $cyan,
+  "black":   $black,
+  "dark":    $dark,
+  "white":    $white,
+  "light":    $light
+) !default;
+
+$list-opacity: (
+  "1": 0.1,
+  "2": 0.2,
+  "3": 0.3,
+  "4": 0.4,
+  "5": 0.5,
+  "6": 0.6,
+  "7": 0.7,
+  "8": 0.8,
+  "9": 0.9,
+  "10": 1
+) !default;
+
+/*
+* FONT
+*/
+
+.font-awesome {
+  font-family: "Font Awesome 6 Pro";
+}

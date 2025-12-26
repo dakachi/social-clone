@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appchannelxprofiles",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppChannelXProfiles\\": "app/",
+            "Modules\\AppChannelXProfiles\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppChannelXProfiles\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppChannelXProfiles\\Tests\\": "tests/"
+        }
+    }
+}

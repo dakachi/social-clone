@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appaipublishing",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppAIPublishing\\": "app/",
+            "Modules\\AppAIPublishing\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppAIPublishing\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppAIPublishing\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "AdminBlogCategories",
+    "alias": "adminblogcategories",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminBlogCategories\\Providers\\AdminBlogCategoriesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/blogs/categories",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "Frontend",
+        "position": 50000,
+        "name": "Blogs",
+        "color": "#cf1eb2",
+        "icon": "fa-light fa-blog",
+        "sub_menu": [
+        ]
+    }
+}

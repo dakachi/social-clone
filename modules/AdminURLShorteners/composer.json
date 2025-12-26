@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminurlshorteners",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminURLShorteners\\": "app/",
+            "Modules\\AdminURLShorteners\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminURLShorteners\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminURLShorteners\\Tests\\": "tests/"
+        }
+    }
+}

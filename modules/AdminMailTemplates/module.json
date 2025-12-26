@@ -1,0 +1,33 @@
+{
+    "name": "AdminMailTemplates",
+    "alias": "adminmailtemplates",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminMailTemplates\\Providers\\AdminMailTemplatesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/mail/templates",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "",
+        "position": 2900,
+        "name": "Mail System",
+        "color": "#248bcb",
+        "icon": "fa-light fa-envelopes-bulk",
+        "sub_menu": [
+            {
+                "uri": "admin/mail/templates",
+                "name": "Mail Templates",
+                "position": 95,
+                "icon": "fa-light fa-envelopes-bulk",
+                "color": "#f7d536"
+            }
+        ]
+    }
+}

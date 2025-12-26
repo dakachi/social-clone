@@ -1,0 +1,23 @@
+{
+    "name": "AppBulkPost",
+    "alias": "appbulkpost",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppBulkPost\\Providers\\AppBulkPostServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/bulk-post",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 230000,
+        "name": "Bulk Posts",
+        "color": "#39dc82",
+        "icon": "fa-light fa-rocket-launch"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "AppAnalyticsFacebook",
+    "alias": "appanalyticsfacebook",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAnalyticsFacebook\\Providers\\AppAnalyticsFacebookServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminnotifications",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminNotifications\\": "app/",
+            "Modules\\AdminNotifications\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminNotifications\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminNotifications\\Tests\\": "tests/"
+        }
+    }
+}

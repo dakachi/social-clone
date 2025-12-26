@@ -1,0 +1,23 @@
+{
+    "name": "AppCaptions",
+    "alias": "appcaptions",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppCaptions\\Providers\\AppCaptionsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/captions",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 20,
+        "position": 600,
+        "name": "Captions",
+        "color": "#18939a",
+        "icon": "fa-light fa-message-lines"
+    }
+}

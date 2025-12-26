@@ -1,0 +1,24 @@
+{
+    "name": "AdminAPIIntegration",
+    "alias": "adminapiintegration",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAPIIntegration\\Providers\\AdminAPIIntegrationServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/api-integration",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "position": 70000,
+        "name": "API Integration",
+        "color": "#048e4d",
+        "icon": "fa-light fa-puzzle",
+        "sub_menu": []
+    }
+}

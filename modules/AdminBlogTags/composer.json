@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminblogtags",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminBlogTags\\": "app/",
+            "Modules\\AdminBlogTags\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminBlogTags\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminBlogTags\\Tests\\": "tests/"
+        }
+    }
+}

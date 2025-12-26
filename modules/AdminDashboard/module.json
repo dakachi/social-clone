@@ -1,0 +1,23 @@
+{
+    "name": "AdminDashboard",
+    "alias": "admindashboard",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminDashboard\\Providers\\AdminDashboardServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/dashboard",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 300000,
+        "name": "Dashboard",
+        "color": "#227dd2",
+        "icon": "fa-light fa-house"
+    }
+}

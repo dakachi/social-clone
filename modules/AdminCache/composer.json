@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/admincache",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminCache\\": "app/",
+            "Modules\\AdminCache\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminCache\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminCache\\Tests\\": "tests/"
+        }
+    }
+}

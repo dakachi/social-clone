@@ -1,0 +1,33 @@
+{
+    "name": "AdminBackendAppearance",
+    "alias": "adminbackendappearance",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminBackendAppearance\\Providers\\AdminBackendAppearanceServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings/appearance",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#9a954d",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/appearance",
+                "name": "Appearance",
+                "position": 800000,
+                "icon": "fa-light fa-gear",
+                "color": "#505029"
+            }
+        ]
+    }
+}

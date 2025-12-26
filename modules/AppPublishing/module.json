@@ -1,0 +1,29 @@
+{
+    "name": "AppPublishing",
+    "alias": "apppublishing",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppPublishing\\Providers\\AppPublishingServiceProvider"
+    ],
+    "files": [],
+    "assets": {
+        "css": [],
+        "js": [
+            "resources/assets/js/publishing.js"
+        ]
+    },
+    "permission": true,
+    "menu": {
+        "uri": "app/publishing",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 250000,
+        "name": "Publishing",
+        "color": "#14373b",
+        "icon": "fa-light fa-paper-plane"
+    }
+}

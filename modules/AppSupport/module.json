@@ -1,0 +1,40 @@
+{
+    "name": "AppSupport",
+    "alias": "appsupport",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppSupport\\Providers\\AppSupportServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/support",
+        "role": "client",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "More",
+        "position": 3000,
+        "name": "Support",
+        "color": "#5e60ee",
+        "icon": "fa-light fa-life-ring",
+        "sub_menu": [
+            {
+                "uri": "app/support/new-ticket",
+                "name": "New Ticket",
+                "position": 40,
+                "icon": "fa-light fa-life-ring",
+                "color": "#992527"
+            },
+            {
+                "uri": "app/support",
+                "name": "View All Tickets",
+                "position": 30,
+                "icon": "fa-light fa-life-ring",
+                "color": "#c143f2"
+            }
+        ]
+    }
+}

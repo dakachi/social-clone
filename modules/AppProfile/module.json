@@ -1,0 +1,23 @@
+{
+    "name": "AppProfile",
+    "alias": "appprofile",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppProfile\\Providers\\AppProfileServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 40,
+        "position": 1000,
+        "name": "Profile",
+        "color": "#febc54",
+        "icon": "fa-light fa-user"
+    }
+}

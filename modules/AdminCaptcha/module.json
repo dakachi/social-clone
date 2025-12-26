@@ -1,0 +1,33 @@
+{
+    "name": "AdminCaptcha",
+    "alias": "admincaptcha",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCaptcha\\Providers\\AdminCaptchaServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/recaptcha-setings",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/captcha-configuration",
+                "name": "Captcha",
+                "position": 300000,
+                "icon": "fa-light fa-shield-alt",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

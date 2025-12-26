@@ -1,0 +1,157 @@
+.file-item .remove{
+	display: none!important;
+}
+
+/*.file-item{overflow: hidden;}*/
+
+.file-selected-media{
+	position: relative;
+	min-height: 100px;
+	max-height: 205px;
+
+	.items{
+		text-align: left;
+		overflow-y: auto;
+		max-height: 205px;
+	  	min-height: 100px;
+	}
+
+	.drophere{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+	}
+
+	.drophere span{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		margin-top: -10px;
+	}
+
+	.drophere .has-action{
+		display: none;
+	}
+
+	.file-item{
+		position: relative;
+		display: block;
+		width: 95px!important;
+		height: 95px!important;
+		min-height: 95px!important;
+		display: inline-block;
+	  	margin: 3px;
+	  	float: left;
+
+	  	&.ui-sortable-placeholder{
+			position: relative!important;
+		}
+
+		&.ui-sortable-helper{
+			border-radius: 100px!important;
+			border: none!important;
+		}
+
+		&.ui-sortable-helper *{
+			border-radius: 100px!important;;
+			transition: all 0.4s;
+		}
+
+		&.ui-sortable-helper .remove{
+			display: none!important;
+		}
+
+		.file-item-media{
+			border-radius: 6px;
+		}
+
+		.remove{
+			position: absolute;
+			right: 3px!important;
+			top: 3px;
+			left: auto!important;
+			display: none;
+			background: transparent;
+			border: none;
+			padding: 0;
+			z-index: 10000;
+		}
+
+		&:not(.ui-sortable-helper):hover .remove{
+			display: block!important;
+		}
+
+		//chua dung
+		.file-chechbox{
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			z-index: 10;
+		}
+
+		.file-list-overplay{
+			width: 100%;
+		}
+
+		.file-list-box{
+			height: calc( 100% );
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			transition: all 0.1s;
+		}
+
+		&.active .fm-list-box{
+			border: 10px solid #dcfdfd;
+			border-radius: 4px;
+		}
+
+		.fm-list-box .fm-list-hover{
+			overflow: hidden;
+			height: 100%;
+			position: relative;
+		}
+
+		.fm-list-box .fm-list-media{
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+			transition: all 0.2s;
+			font-size: 20px!important;
+		}
+
+		.fm-list-box .fm-list-media{
+			background-size: cover;
+		  background-position: center;
+		}
+
+		.file-info{
+			display: none!important;
+		}
+
+		
+
+		&.fm-selected-mini{
+			max-height: none!important;
+		}
+
+		&.fm-selected-mini .items{
+			border: 1px solid var(--sp-gray-300);
+			border-radius: 4px 4px 0 0;
+		}
+
+		&.fm-selected-mini .fm-mini-option{
+		    border: 1px solid var(--sp-gray-300);
+		    border-radius: 0 0 4px 4px;
+		    position: relative;
+		    top: -1px;
+		}
+	}
+
+}

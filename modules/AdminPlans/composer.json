@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminplans",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminPlans\\": "app/",
+            "Modules\\AdminPlans\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminPlans\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminPlans\\Tests\\": "tests/"
+        }
+    }
+}

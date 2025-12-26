@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+@import "../plugins/bootstrap/scss/bootstrap";
+
+@import 'forms/forms';
+
+@import 'base/reset';
+@import 'base/helper';
+
+@import 'layout/header';
+@import 'layout/sidebar';
+@import 'layout/main';
+
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/badge';
+@import 'components/dropdown';
+@import 'components/tabs';
+@import 'components/pagination';
+@import 'components/table';
+@import 'components/calendar';
+@import 'components/modal';
+@import 'components/offcanvas';
+@import 'components/select';
+@import 'components/files';
+@import 'components/tooltip';
+@import 'components/daterangepicker';
+
+@import url(../plugins/fontawesome/css/all.min.css);
+@import url(../plugins/jquery-ui/jquery-ui.min.css);
+@import url(../plugins/emojionearea/emojionearea.min.css);
+@import url(../plugins/datetimepicker/timepicker-addon.min.css);
+@import url(../plugins/select2/css/select2.min.css);
+@import url(../plugins/select2/css/select2-bootstrap-5-theme.css);
+@import url(../plugins/flags/flag-icon.css);
+@import url(../plugins/izitoast/css/iziToast.css);
+@import url(../plugins/datatables/datatables.min.css);
+@import url(../plugins/sweetalert2/sweetalert2.min.css);
+@import url(../plugins/ion.rangeSlider/css/ion.rangeSlider.min.css);
+@import url(../plugins/inputTags/inputTags.min.css);
+@import url(../plugins/codemirror5/lib/codemirror.css);
+@import url(../plugins/codemirror5/theme/dracula.css);
+
+html,body{
+	height: 100%;
+	background-color: $bg-body;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-size: pxToRem(16);
+}
+

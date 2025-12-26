@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminsocialpages",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminSocialPages\\": "app/",
+            "Modules\\AdminSocialPages\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminSocialPages\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminSocialPages\\Tests\\": "tests/"
+        }
+    }
+}

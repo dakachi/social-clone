@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appaffiliate",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppAffiliate\\": "app/",
+            "Modules\\AppAffiliate\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppAffiliate\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppAffiliate\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Succeed": "Succeed",
+    "Affiliate Settings": "Affiliate Settings",
+    "Configure affiliate commissions, tracking, and payment options easily": "Configure affiliate commissions, tracking, and payment options easily",
+    "Affiliate Minimum Withdrawal": "Affiliate Minimum Withdrawal",
+    "Enter Minimum Withdrawal Amount": "Enter Minimum Withdrawal Amount",
+    "Affiliate Commission Percentage (%)": "Affiliate Commission Percentage (%)",
+    "Enter Affiliate Commission Percentage (%)": "Enter Affiliate Commission Percentage (%)",
+    "The types of payments accepted for withdrawal": "The types of payments accepted for withdrawal",
+    "Enter types of payments": "Enter types of payments",
+    "Onetime Commission": "Onetime Commission",
+    "Enable": "Enable",
+    "Disable": "Disable",
+    "Save changes": "Save changes",
+    "Settings": "Settings",
+    "Affiliate": "Affiliate",
+    "If you enable this feature, the affiliate will receive a commission only once. If you disable this feature, the affiliate will receive a recurring commission for each purchase.": "If you enable this feature, the affiliate will receive a commission only once. If you disable this feature, the affiliate will receive a recurring commission for each purchase."
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminapiintegration",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminAPIIntegration\\": "app/",
+            "Modules\\AdminAPIIntegration\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminAPIIntegration\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminAPIIntegration\\Tests\\": "tests/"
+        }
+    }
+}

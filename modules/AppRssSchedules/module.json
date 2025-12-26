@@ -1,0 +1,23 @@
+{
+    "name": "AppRssSchedules",
+    "alias": "apprssschedules",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppRssSchedules\\Providers\\AppRssSchedulesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/rss-schedules",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 220000,
+        "name": "RSS Schedules",
+        "color": "#f26522",
+        "icon": "fa-light fa-square-rss"
+    }
+}

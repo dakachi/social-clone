@@ -1,0 +1,29 @@
+{
+    "name": "AppAIContents",
+    "alias": "appaicontents",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAIContents\\Providers\\AppAIContentsServiceProvider"
+    ],
+    "files": [],
+    "assets": {
+        "css": [],
+        "js": [
+            "resources/assets/js/aicontent.js"
+        ]
+    },
+    "permission": true,
+    "menu": {
+        "uri": "app/ai-contents",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 10,
+        "position": 20000,
+        "name": "AI Contents",
+        "color": "#6e3f14",
+        "icon": "fa-light fa-sparkles"
+    }
+}

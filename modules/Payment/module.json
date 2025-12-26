@@ -1,0 +1,23 @@
+{
+    "name": "Payment",
+    "alias": "payment",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Payment\\Providers\\PaymentServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "payment",
+        "role": "client",
+        "platform": 0,
+        "section": "",
+        "tab_id": 0,
+        "position": 0,
+        "name": "Payment",
+        "color": "#66b610",
+        "icon": "fa-light fa-credit-card"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminaitemplates",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminAITemplates\\": "app/",
+            "Modules\\AdminAITemplates\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminAITemplates\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminAITemplates\\Tests\\": "tests/"
+        }
+    }
+}

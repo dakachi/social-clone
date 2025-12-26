@@ -1,0 +1,23 @@
+{
+    "name": "AppAIPrompts",
+    "alias": "appaiprompts",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAIPrompts\\Providers\\AppAIPromptsServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/ai-prompts",
+        "role": "client",
+        "platform": 0,
+        "section": "",
+        "tab_id": 20,
+        "position": 600,
+        "name": "AI Prompt",
+        "color": "#18939a",
+        "icon": "fa-light fa-lightbulb-on"
+    }
+}

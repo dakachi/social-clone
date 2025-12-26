@@ -1,0 +1,24 @@
+{
+    "name": "AdminMarketplace",
+    "alias": "adminmarketplace",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminMarketplace\\Providers\\AdminMarketplaceServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/marketplace",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 60,
+        "position": 190000,
+        "name": "Marketplace",
+        "color": "#31b1d4",
+        "icon": "fa-light fa-store",
+        "description": "Discover and install powerful modules for Stackposts"
+    }
+}

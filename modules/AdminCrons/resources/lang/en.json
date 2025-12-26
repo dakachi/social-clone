@@ -1,0 +1,13 @@
+{
+    "Crons": "Crons",
+    "Automates scheduled tasks for efficient time-based execution": "Automates scheduled tasks for efficient time-based execution",
+    "More": "More",
+    "Cron key updated successfully": "Cron key updated successfully",
+    "Secure Cron Key": "Secure Cron Key",
+    "Changing the key requires updating all cronjobs in your system for continued operation. Are you sure you want to continue?": "Changing the key requires updating all cronjobs in your system for continued operation. Are you sure you want to continue?",
+    "Change Key": "Change Key",
+    "Use this secret key for secure URL-based cron execution": "Use this secret key for secure URL-based cron execution",
+    "List Cron": "List Cron",
+    "Use cron with URL": "Use cron with URL",
+    "Use cron with Artisan Command": "Use cron with Artisan Command"
+}

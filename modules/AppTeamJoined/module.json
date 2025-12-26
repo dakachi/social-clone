@@ -1,0 +1,12 @@
+{
+    "name": "AppTeamJoined",
+    "alias": "appteamjoined",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppTeamJoined\\Providers\\AppTeamJoinedServiceProvider"
+    ],
+    "files": [],
+    "permission": false
+}

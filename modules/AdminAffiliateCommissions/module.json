@@ -1,0 +1,33 @@
+{
+    "name": "AdminAffiliateCommissions",
+    "alias": "adminaffiliatecommissions",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAffiliateCommissions\\Providers\\AdminAffiliateCommissionsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/affiliate-commissions",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 45000,
+        "name": "Affiliate",
+        "color": "#4988d1",
+        "icon": "fa-light fa-brain-circuit",
+        "sub_menu": [
+            {
+                "uri": "admin/affiliate-commissions",
+                "name": "Affiliate Commissions",
+                "position": 50,
+                "icon": "fa-light fa-brain-circuit",
+                "color": "#3390c3"
+            }
+        ]
+    }
+}

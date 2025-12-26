@@ -1,0 +1,20 @@
+{
+    "Please select at least a profile": "Please select at least a profile",
+    "The accounts you selected are paused or inactive. Please log in again and try.": "The accounts you selected are paused or inactive. Please log in again and try.",
+    "Please select a bulk template CSV file for upload.": "Please select a bulk template CSV file for upload.",
+    "The system was unable to determine the file type.": "The system was unable to determine the file type.",
+    "Unable to retrieve CSV file content.": "Unable to retrieve CSV file content.",
+    "You're scheduling %s posts to %s social accounts.": "You're scheduling %s posts to %s social accounts.",
+    "Bulk Post": "Bulk Post",
+    "Manage and publish multiple posts efficiently and quickly": "Manage and publish multiple posts efficiently and quickly",
+    "Bulk Template": "Bulk Template",
+    "Media CSV file": "Media CSV file",
+    "Interval per post (minute)": "Interval per post (minute)",
+    "If your posts are scheduled incorrectly or left empty, the system will automatically set the first post to the current time, with subsequent posts following a set interval delay.": "If your posts are scheduled incorrectly or left empty, the system will automatically set the first post to the current time, with subsequent posts following a set interval delay.",
+    "Auto URL Shortener": "Auto URL Shortener",
+    "Save changes": "Save changes",
+    "Bulk post": "Bulk post",
+    "Publishing": "Publishing",
+    "Bulk Posts": "Bulk Posts",
+    "You're scheduling :posts posts to :accounts social accounts.": "You're scheduling :posts posts to :accounts social accounts."
+}

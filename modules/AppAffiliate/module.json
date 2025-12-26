@@ -1,0 +1,25 @@
+{
+    "name": "AppAffiliate",
+    "alias": "appaffiliate",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAffiliate\\Providers\\AppAffiliateServiceProvider",
+        "Modules\\AppAffiliate\\Providers\\EventServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/affiliate",
+        "role": "client",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "More",
+        "position": 5000,
+        "name": "Affiliate",
+        "color": "#8f5dc6",
+        "icon": "fa-light fa-handshake"
+    }
+}

@@ -1,0 +1,689 @@
+// -------------------------------
+// Base Loading Styles
+// -------------------------------
+
+.loading {
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 150000000000;
+  margin: 0 auto;
+  display: none;
+}
+
+.object-cover{
+  object-fit: cover;
+}
+
+.width-wrap *{
+  max-width: 100%!important;
+  max-height: 100%!important;
+}
+
+// -------------------------------
+// IMG WRAP
+// -------------------------------
+
+.img-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.img-wrap-4x3 {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.img-wrap-16x9 {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.img-wrap img, 
+.img-wrap-4x3 img, 
+.img-wrap-16x9 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// -------------------------------
+// Spinner Animation
+// -------------------------------
+
+.spinner {
+  width: 13px;
+  height: 13px;
+  animation: spinner-rotate 1s infinite linear;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $gray-700;
+    border-radius: 50%;
+    animation: spinner-bounce 1.25s infinite ease;
+  }
+
+  div:nth-child(1) { --rotation: 90; }
+  div:nth-child(2) { --rotation: 180; }
+  div:nth-child(3) { --rotation: 270; }
+  div:nth-child(4) { --rotation: 360; }
+}
+
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-bounce {
+  0%, 100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
+  }
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(300%);
+  }
+}
+
+// -------------------------------
+// Progress Bar
+// -------------------------------
+
+.progress {
+  height: 4.5px;
+  min-width: 145.6px;
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+
+  @each $color-name, $color-code in $list-colors {
+    @for $i from 1 through 9 {
+      &.progress-#{$color-name}-#{$i * 100} {
+        @if $i < 5 {
+          background: linear-gradient(tint-color($color-code, 100 - 20 * $i) 0 0),
+                      linear-gradient(tint-color($color-code, 100 - 20 * $i) 0 0),
+                      $gray-200;
+        } @else if $i == 5 {
+          background: linear-gradient($color-code 0 0),
+                      linear-gradient($color-code 0 0),
+                      $gray-200;
+        } @else {
+          background: linear-gradient(shade-color($color-code, 20 * ($i - 5)) 0 0),
+                      linear-gradient(shade-color($color-code, 20 * ($i - 5)) 0 0),
+                      $gray-200;
+        }
+
+        background-size: 60% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.progress-run {
+  height: 4.5px;
+  min-width: 145.6px;
+  background: linear-gradient($gray-700 0 0), linear-gradient($gray-700 0 0), $gray-200;
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  animation: progress-bar 3s infinite;
+
+  @each $color-name, $color-code in $list-colors {
+    @for $i from 1 through 9 {
+      &.progress-#{$color-name}-#{$i * 100} {
+        @if $i < 5 {
+          background: linear-gradient(tint-color($color-code, 100 - 20 * $i) 0 0),
+                      linear-gradient(tint-color($color-code, 100 - 20 * $i) 0 0),
+                      $gray-200;
+        } @else if $i == 5 {
+          background: linear-gradient($color-code 0 0),
+                      linear-gradient($color-code 0 0),
+                      $gray-200;
+        } @else {
+          background: linear-gradient(shade-color($color-code, 20 * ($i - 5)) 0 0),
+                      linear-gradient(shade-color($color-code, 20 * ($i - 5)) 0 0),
+                      $gray-200;
+        }
+
+        background-size: 60% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+@keyframes progress-bar {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}
+
+// -------------------------------
+// Dot Pulse Loader
+// -------------------------------
+
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $primary;
+  box-shadow: 0 0 0 0 $blue-300;
+  animation: pulse-loader 1.5s infinite linear;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 $blue-300;
+    animation: inherit;
+  }
+
+  &::before { animation-delay: -0.5s; }
+  &::after { animation-delay: -1s; }
+}
+
+@keyframes pulse-loader {
+  100% { box-shadow: 0 0 0 40px #0000; }
+}
+
+// -------------------------------
+// Stack Loader
+// -------------------------------
+
+.loader-stack {
+  position: relative;
+  width:  48px;
+  height: 48px;
+  background: #de3500;
+  transform: rotateX(65deg) rotate(45deg);
+  // remove bellows command for perspective change
+  //transform: perspective(200px) rotateX(65deg) rotate(45deg); 
+  color: #fff;
+  animation: layers1 1s linear infinite alternate;
+}
+.loader-stack:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% { box-shadow: 0px 0px 0 0px  }
+ 90% , 100% { box-shadow: 20px 20px 0 -4px  }
+}
+@keyframes layerTr {
+  0% { transform:  translate(0, 0) scale(1) }
+  100% {  transform: translate(-25px, -25px) scale(1) }
+}
+
+// -------------------------------
+// Stack Circel
+// -------------------------------
+
+.loader-circle {
+  width: 48px;
+  height: 48px;
+  border: 3px dotted $gray-300;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader-circle::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted $primary;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} 
+
+// -------------------------------
+// Empty State Image
+// -------------------------------
+
+.empty {
+  background-image: url(../img/empty-icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+// -------------------------------
+// Rotate Animations
+// -------------------------------
+
+.a-rotate,
+.a-rotate-180,
+.a-rotate-270,
+.a-rotate-360 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.a-rotate:hover { transform: rotate(90deg); }
+.a-rotate-180:hover { transform: rotate(180deg); }
+.a-rotate-270:hover { transform: rotate(270deg); }
+.a-rotate-360:hover { transform: rotate(360deg); }
+
+.rotate { transform: rotate(90deg); transition: transform 0.2s ease-in-out; }
+.rotate-180 { transform: rotate(180deg); transition: transform 0.2s ease-in-out; }
+.rotate-270 { transform: rotate(270deg); transition: transform 0.2s ease-in-out; }
+.rotate-360 { transform: rotate(360deg); transition: transform 0.2s ease-in-out; }
+
+// -------------------------------
+// Z-Index Overrides
+// -------------------------------
+
+.next-index + *,
+.next-index + *:last-child,
+.cc-everywhere-container {
+  position: absolute;
+  z-index: 10000000;
+}
+
+// -------------------------------
+// TINYMCE Editor Customization
+// -------------------------------
+
+.tox-promotion,
+.tox-statusbar__branding {
+  display: none !important;
+}
+
+.tox-tinymce {
+  border-radius: 6px !important;
+  border: 1px solid $gray-300;
+}
+
+.tox-editor-header {
+  box-shadow: none !important;
+  border-bottom: 1px solid $gray-300 !important;
+}
+
+.tox .tox-statusbar {
+  background: transparent !important;
+}
+
+.tox-tinymce-aux {
+  z-index: 10006 !important;
+}
+
+// -------------------------------
+// Input Tags
+// -------------------------------
+
+.inputTags-list {
+  border-color: $gray-300 !important;
+
+  .inputTags-item {
+    font-size: 12px;
+    background-color: $blue-100;
+    color: $dark;
+    border: 1px solid $blue-300;
+  }
+
+  .inputTags-field {
+    font-size: 12px;
+  }
+}
+
+// -------------------------------
+// Full Calendar Customizations
+// -------------------------------
+
+.fc-event::before,
+.fc-event::after {
+  display: none !important;
+  background: transparent !important;
+}
+
+.fc-day.past-day {
+  background-color: $gray-100;
+  cursor: default;
+
+  .fc-daygrid-day-bg {
+    display: none;
+  }
+
+  .fc-event {
+    cursor: default;
+  }
+}
+
+// -------------------------------
+// SweetAlert2 Customization
+// -------------------------------
+
+.swal2-container {
+  z-index: 9999999999;
+  background: rgba(225, 225, 225, 0.7) !important;
+
+  .swal2-popup {
+    width: auto;
+    max-width: 400px;
+    padding: 1.5rem;
+    border-radius: 10px !important;
+    border: 1px solid $gray-300;
+
+    .swal2-actions {
+      width: 100% !important;
+      gap: 16px;
+    }
+
+    .swal2-html-container {
+      font-size: 14px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+      flex: 1 1 auto !important;
+    }
+  }
+}
+
+// -------------------------------
+// Collapse Arrow Animation
+// -------------------------------
+
+.collapse-arrow {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+
+.collapsed .collapse-arrow {
+  transform: rotate(0deg);
+}
+
+/* Backgound */
+
+.bg-polygon{
+  background-image: url('../img/polygon-bg-element.png');
+  background-size: auto 100%;
+  background-repeat: repeat;
+}
+
+.bg-squared{
+  background-image: url('../img/squared-bg-element.svg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.bg-pattern-light{
+  background-image: url('../img/pattern-light-big.svg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.bg-pattern-white{
+  background-image: url('../img/pattern-white.svg');
+  background-repeat: repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+
+/* Google Picker */
+.picker-dialog-bg{
+  z-index: 99999998!important;
+}
+
+.picker-dialog{
+  z-index: 99999999!important;
+}
+
+/* HighCharts */
+.highcharts-title {
+  display: none !important;
+}
+
+/*Notification*/
+.animated-bell {
+    animation: shake 1.5s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-6deg); }
+    80% { transform: rotate(6deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.bounce {
+    animation: bounceBadge 1.2s infinite;
+}
+
+@keyframes bounceBadge {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -60%) scale(1.2); }
+}
+
+/*Pricing*/
+.pricing {
+  // Responsive border-end
+  @media (min-width: 768px) {
+    .border-end-md {
+      border-right: 1px solid #dee2e6 !important;
+    }
+  }
+
+  .pricing-card {
+    border-radius: 1.5rem;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 8px 36px 0 rgba(103, 93, 255, 0.18) !important;
+    }
+  }
+
+  .info-hover-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #f3f3ff;
+    transition: background 0.2s;
+    margin-left: 2px;
+
+    &:hover,
+    &:focus {
+      background: #ebe7ff;
+      outline: none;
+    }
+  }
+
+  .feature-popup-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &:hover .features-popup,
+    &:focus-within .features-popup {
+      display: block;
+    }
+  }
+
+  .features-popup {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 240px;
+    max-width: 320px;
+    max-height: 260px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 32px 0 rgba(31, 30, 52, 0.14);
+    z-index: 10;
+    padding: 0;
+    font-size: 1rem;
+    animation: fadeIn 0.25s;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #eceaff;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 767px) {
+      left: auto;
+      right: 0;
+      top: 110%;
+      transform: none;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-40%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+}
+
+
+.app-loading {
+  width: 220px;
+  height: 10px;
+  border-radius: 10px;
+  background: 
+    linear-gradient(90deg,#0001 33%,#0005 50%,#0001 66%)
+    #f2f2f2;
+  background-size:300% 100%;
+  animation: apploading 1s infinite linear;
+}
+@keyframes apploading {
+  0% {background-position: right}
+}
+
+/*
+* Filerobot
+ */
+.sc-fzoXWK.cwaaKE {
+  margin-left: 10px;
+  border-radius: 6px!important;
+  background-color: $primary!important;
+}
+
+
+/*
+* Drag & Drop
+ */
+#drag-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999999999999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#drag-overlay.active {
+  display: flex;
+  animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay-box {
+  background: #fff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.overlay-box i {
+  font-size: 60px;
+  color: #28a745;
+  margin-bottom: 15px;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.overlay-box h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.overlay-box p {
+  font-size: 14px;
+  color: #666;
+}

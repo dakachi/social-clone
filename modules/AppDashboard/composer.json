@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appdashboard",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppDashboard\\": "app/",
+            "Modules\\AppDashboard\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppDashboard\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppDashboard\\Tests\\": "tests/"
+        }
+    }
+}

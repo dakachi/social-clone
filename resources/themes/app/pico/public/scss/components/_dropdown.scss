@@ -1,0 +1,31 @@
+.dropdown{
+    &.dropdown-hover:hover{
+        .dropdown-menu{
+            
+        }
+    }
+}
+
+
+.dropdown-toggle{
+	&.dropdown-arrow-hide{
+		&:after{
+			display: none;
+		}
+	}
+}
+
+.dropdown-menu {
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    border: $dropdown-border;
+    box-shadow: $dropdown-box-shadow;
+    background-color: $dropdown-background-color;
+    border-radius: .75rem;
+    font-size: 0.8125rem;
+}
+
+.dropdown-divider{
+	border-color: $gray-200;
+}

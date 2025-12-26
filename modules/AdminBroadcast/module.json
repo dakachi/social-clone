@@ -1,0 +1,32 @@
+{
+    "name": "AdminBroadcast",
+    "alias": "adminbroadcast",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminBroadcast\\Providers\\AdminBroadcastServiceProvider"
+    ],
+    "files": [],
+    "menu": {
+        "uri": "admin/settings/broadcast",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 20000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/broadcast",
+                "name": "Broadcast",
+                "position": 260000,
+                "icon": "fa-light fa-tower-broadcast",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

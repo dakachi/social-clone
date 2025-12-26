@@ -1,0 +1,33 @@
+{
+    "name": "AdminURLShorteners",
+    "alias": "adminurlshorteners",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminURLShorteners\\Providers\\AdminURLShortenersServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings/url-shorteners",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 190000,
+        "name": "Settings",
+        "color": "#0f305e",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/url-shorteners",
+                "name": "URL Shorteners",
+                "position": 450000,
+                "icon": "fa-light fa-link",
+                "color": "#3fae0c"
+            }
+        ]
+    }
+}

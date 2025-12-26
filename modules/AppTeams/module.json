@@ -1,0 +1,23 @@
+{
+    "name": "AppTeams",
+    "alias": "appteams",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppTeams\\Providers\\AppTeamsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/teams",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 20,
+        "position": 1500,
+        "name": "Teams",
+        "color": "#e17879",
+        "icon": "fa-light fa-users-line"
+    }
+}

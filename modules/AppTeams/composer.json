@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appteams",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppTeams\\": "app/",
+            "Modules\\AppTeams\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppTeams\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppTeams\\Tests\\": "tests/"
+        }
+    }
+}

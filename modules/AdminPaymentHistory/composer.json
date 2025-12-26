@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminpaymenthistory",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminPaymentHistory\\": "app/",
+            "Modules\\AdminPaymentHistory\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminPaymentHistory\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminPaymentHistory\\Tests\\": "tests/"
+        }
+    }
+}

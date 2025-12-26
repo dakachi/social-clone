@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminproxies",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminProxies\\": "app/",
+            "Modules\\AdminProxies\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminProxies\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminProxies\\Tests\\": "tests/"
+        }
+    }
+}

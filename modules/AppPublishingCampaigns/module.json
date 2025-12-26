@@ -1,0 +1,23 @@
+{
+    "name": "AppPublishingCampaigns",
+    "alias": "apppublishingcampaigns",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppPublishingCampaigns\\Providers\\AppPublishingCampaignsServiceProvider"
+    ],
+    "files": [],
+    "permission": -1,
+    "menu": {
+        "uri": "app/publishing/campaigns",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Campaigns",
+        "color": "#b8bac5",
+        "icon": "fa-light fa-flag-checkered"
+    }
+}

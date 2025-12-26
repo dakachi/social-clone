@@ -1,0 +1,34 @@
+{
+    "name": "AdminCache",
+    "alias": "admincache",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCache\\Providers\\AdminCacheServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings/cache",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 190000,
+        "name": "Settings",
+        "color": "#0f305e",
+        "icon": "fa-light fa-database",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/cache",
+                "name": "Cache",
+                "position": 210000,
+                "icon": "fa-light fa-link",
+                "color": "#3fae0c"
+            }
+        ]
+    }
+}
+ 

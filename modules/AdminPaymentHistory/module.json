@@ -1,0 +1,24 @@
+{
+    "name": "AdminPaymentHistory",
+    "alias": "adminpaymenthistory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPaymentHistory\\Providers\\AdminPaymentHistoryServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/payment/history",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 40000,
+        "name": "Payment History",
+        "color": "#852894",
+        "icon": "fa-light fa-landmark-magnifying-glass"
+    }
+}

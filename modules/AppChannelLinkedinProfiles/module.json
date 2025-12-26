@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelLinkedinProfiles",
+    "alias": "appchannellinkedinprofiles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelLinkedinProfiles\\Providers\\AppChannelLinkedinProfilesServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/linkedin/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Linkedin profiles",
+        "color": "#0a66c2",
+        "icon": "fa-brands fa-linkedin"
+    }
+}

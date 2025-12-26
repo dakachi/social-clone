@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "cross-env VITE_DEV_SERVER=true THEME=$npm_config_theme vite --config vite.config.js",
+        "build": "cross-env VITE_DEV_SERVER=false THEME=$npm_config_theme vite build --config vite.config.js"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/postcss": "^4.1.5",
+        "@tailwindcss/typography": "^0.5.16",
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.21",
+        "axios": "^1.7.4",
+        "concurrently": "^9.1.2",
+        "cross-env": "^7.0.3",
+        "daisyui": "^5.0.28",
+        "glob": "^11.0.1",
+        "laravel-echo": "^2.0.2",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.5.3",
+        "preline": "^3.0.1",
+        "pusher-js": "^8.4.0",
+        "tailwindcss": "^4.1.5",
+        "vite": "^5.0"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.1.5",
+        "tailwind-variants": "^1.0.0"
+    }
+}

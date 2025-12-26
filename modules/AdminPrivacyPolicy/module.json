@@ -1,0 +1,23 @@
+{
+    "name": "AdminPrivacyPolicy",
+    "alias": "adminprivacypolicy",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPrivacyPolicy\\Providers\\AdminPrivacyPolicyServiceProvider"
+    ],
+   "menu": {
+        "permission": true,
+        "uri": "admin/frontend/privacy-policy",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 50,
+        "tab_name": "Frontend",
+        "position": 17002,
+        "name": "Privacy Policy",
+        "color": "#fc61c9",
+        "icon": "fa-light  fa-shield-keyhole"
+    }
+}

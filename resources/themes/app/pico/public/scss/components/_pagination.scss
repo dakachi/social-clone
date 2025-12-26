@@ -1,0 +1,99 @@
+.pagination{
+	margin-bottom: 0px;
+	display: flex;
+	gap: 0.325rem;
+
+	.page-item{
+
+		.page-link{
+			min-width: 28px;
+			height: 28px;
+			padding: 0;
+			background-color: $light;
+			color: $gray-700;
+			font-weight: 500;
+			font-size: .9125rem;
+			border-radius: 6px;
+			box-shadow: none;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			border: none;
+
+			&:hover, &:focus{
+				background-color: $gray-200;
+			}
+
+			&:before{
+				@extend .font-awesome;
+				position: relative;
+				top: 1px;
+			}
+
+			&.first:before{
+				content: "\f104";
+			}
+
+			&.last:before{
+				content: "\f105";
+			}
+
+			&.next:before{
+				content: "\f101";
+			}
+
+			&.previous:before{
+				content: "\f100";
+			}
+		}
+
+		&.active{
+			.page-link{
+				background-color: $gray-200;
+				border: none;
+				color: $gray-500;
+			}
+		}
+
+		&.disabled{
+			.page-link{
+				color: $gray-500;
+			}
+		}
+	}
+}
+
+.pagination-modern .page-link.page-square {
+    border-radius: 12px !important;
+    border: 2px solid $gray-200 !important;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: $gray-700;
+    background: $light;
+    font-weight: 500;
+    margin: 0 2px;
+    transition: all 0.15s;
+    box-shadow: none;
+}
+.pagination-modern .page-link.page-square.page-active,
+.pagination-modern .page-item.active .page-link.page-square {
+    background: $dark !important;  /* màu cam nổi bật */
+    color: $light !important;
+    border-color: $gray-900 !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px 0 $gray-300;
+}
+.pagination-modern .page-link.page-square:hover {
+    background: $gray-300;
+    color: $gray-900;
+    border-color: $gray-900;
+}
+.pagination-modern .page-item.disabled .page-link.page-square {
+    color: $gray-700;
+    background: $gray-300;
+    border-color: $gray-200;
+    cursor: not-allowed;
+}

@@ -1,0 +1,14 @@
+{
+    "Missing required fields.": "Missing required fields.",
+    "Template not found.": "Template not found.",
+    "Template file does not exist.": "Template file does not exist.",
+    "Template saved successfully.": "Template saved successfully.",
+    "Failed to save template: ": "Failed to save template: ",
+    "Mail Templates": "Mail Templates",
+    "Reusable email content layouts for system notifications.": "Reusable email content layouts for system notifications.",
+    "Please confirm that all information is correct and that you intend to proceed with the changes.": "Please confirm that all information is correct and that you intend to proceed with the changes.",
+    "Variables:": "Variables:",
+    "Save Changes": "Save Changes",
+    "": "",
+    "Mail System": "Mail System"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "AdminUsers",
+    "alias": "adminusers",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminUsers\\Providers\\AdminUsersServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/users",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "User Portal",
+        "position": 50000,
+        "name": "Users",
+        "color": "#a35cdc",
+        "icon": "fa-light fa-users"
+    }
+}

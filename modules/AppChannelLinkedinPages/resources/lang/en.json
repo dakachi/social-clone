@@ -1,0 +1,19 @@
+{
+    "LinkedIn API currently supports only 'media', 'link', 'text' or 'video' post types.": "LinkedIn API currently supports only 'media', 'link', 'text' or 'video' post types.",
+    "LinkedIn requires a video for the 'video' post type; images are not supported.": "LinkedIn requires a video for the 'video' post type; images are not supported.",
+    "No media provided for single media post.": "No media provided for single media post.",
+    "For video posts, please use the 'video' type.": "For video posts, please use the 'video' type.",
+    "Unsupported media type.": "Unsupported media type.",
+    "No media provided for video post.": "No media provided for video post.",
+    "Provided media is not a video.": "Provided media is not a video.",
+    "Unsupported post type": "Unsupported post type",
+    "Succeeded": "Succeeded",
+    "Linkedin": "Linkedin",
+    "Linkedin pages": "Linkedin pages",
+    "Your name": "Your name",
+    "Like": "Like",
+    "Comment": "Comment",
+    "Send": "Send",
+    "To use LinkedIn, you must first configure the app ID and app secret.": "To use LinkedIn, you must first configure the app ID and app secret.",
+    "Could not connect to LinkedIn API: ": "Could not connect to LinkedIn API: "
+}

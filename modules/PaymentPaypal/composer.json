@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/paymentpaypal",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\PaymentPaypal\\": "app/",
+            "Modules\\PaymentPaypal\\Database\\Factories\\": "database/factories/",
+            "Modules\\PaymentPaypal\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\PaymentPaypal\\Tests\\": "tests/"
+        }
+    }
+}

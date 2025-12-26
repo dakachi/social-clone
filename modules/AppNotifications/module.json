@@ -1,0 +1,11 @@
+{
+    "name": "AppNotifications",
+    "alias": "appnotifications",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppNotifications\\Providers\\AppNotificationsServiceProvider"
+    ],
+    "files": []
+}

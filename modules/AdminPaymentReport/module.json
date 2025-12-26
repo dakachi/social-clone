@@ -1,0 +1,24 @@
+{
+    "name": "AdminPaymentReport",
+    "alias": "adminpaymentreport",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPaymentReport\\Providers\\AdminPaymentReportServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/payment/report",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 41000,
+        "name": "Payment Report",
+        "color": "#852894",
+        "icon": "fa-light fa-file-invoice-dollar"
+    }
+}

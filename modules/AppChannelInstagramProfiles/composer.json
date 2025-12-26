@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appchannelinstagramprofiles",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppChannelInstagramProfiles\\": "app/",
+            "Modules\\AppChannelInstagramProfiles\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppChannelInstagramProfiles\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppChannelInstagramProfiles\\Tests\\": "tests/"
+        }
+    }
+}

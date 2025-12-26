@@ -1,0 +1,24 @@
+{
+    "name": "AdminManualPayments",
+    "alias": "adminmanualpayments",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminManualPayments\\Providers\\AdminManualPaymentsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/manual-payments",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 20000,
+        "name": "Manual Payments",
+        "color": "#672cd4",
+        "icon": "fa-light fa-hand-sparkles"
+    }
+}

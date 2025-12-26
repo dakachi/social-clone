@@ -1,0 +1,25 @@
+{
+    "name": "AdminBlogTags",
+    "alias": "adminblogtags",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminBlogTags\\Providers\\AdminBlogTagsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/blogs/tags",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 50000,
+        "name": "Blogs",
+        "color": "#e18e64",
+        "icon": "fa-light fa-blog",
+        "sub_menu": [
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "AdminThemes",
+    "alias": "adminthemes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminThemes\\Providers\\AdminThemesServiceProvider"
+    ],
+    "files": []
+}

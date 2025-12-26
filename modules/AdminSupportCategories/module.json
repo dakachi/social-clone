@@ -1,0 +1,33 @@
+{
+    "name": "AdminSupportCategories",
+    "alias": "adminsupportcategories",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSupportCategories\\Providers\\AdminSupportCategoriesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/support/categories",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "User Portal",
+        "position": 3000,
+        "name": "Support",
+        "color": "#c6bac4",
+        "icon": "fa-light fa-life-ring",
+        "sub_menu": [
+            {
+                "uri": "admin/support/categories",
+                "name": "Manage Categories",
+                "position": 20,
+                "icon": "fa-light fa-life-ring",
+                "color": "#eae4e0"
+            }
+        ]
+    }
+}

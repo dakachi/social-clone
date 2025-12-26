@@ -1,0 +1,22 @@
+{
+    "Error getting access token: Invalid response.": "Error getting access token: Invalid response.",
+    "Approval link not found.": "Approval link not found.",
+    "Missing required parameters: token and\/or PayerID.": "Missing required parameters: token and\/or PayerID.",
+    "Payment was not successful. Please try again.": "Payment was not successful. Please try again.",
+    "Missing 'capture_id' in refund data.": "Missing 'capture_id' in refund data.",
+    "Paypal Configuration": "Paypal Configuration",
+    "One-time Payment": "One-time Payment",
+    "Enable": "Enable",
+    "Disable": "Disable",
+    "Publishable key": "Publishable key",
+    "Live": "Live",
+    "Sandbox": "Sandbox",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Close": "Close",
+    "Save changes": "Save changes",
+    "Paypal One-Time Payment": "Paypal One-Time Payment",
+    "Status": "Status",
+    "Environment": "Environment",
+    "Paypal One-Time": "Paypal One-Time"
+}

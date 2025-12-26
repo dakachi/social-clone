@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminsupporttypes",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminSupportTypes\\": "app/",
+            "Modules\\AdminSupportTypes\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminSupportTypes\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminSupportTypes\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "AdminFrontendThemes",
+    "alias": "adminfrontendthemes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminFrontendThemes\\Providers\\AdminFrontendThemesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/themes/frontend",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 50,
+        "tab_name": "Frontend",
+        "position": 48000,
+        "name": "Themes",
+        "color": "#050c7f",
+        "icon": "fa-light fa-table-layout"
+    }
+}

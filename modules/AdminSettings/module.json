@@ -1,0 +1,33 @@
+{
+    "name": "AdminSettings",
+    "alias": "adminsettings",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSettings\\Providers\\AdminSettingsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#9a51b9",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings",
+                "name": "General settings",
+                "position": 900000,
+                "icon": "fa-light fa-gear",
+                "color": "#16390f"
+            }
+        ]
+    }
+}

@@ -1,0 +1,59 @@
+// ======================================================
+// Layout :: Header
+// ======================================================
+
+.header{
+	position: fixed;
+	top: 0;
+	width: calc(100% - 220px);
+	height: 70px;
+	border-bottom: 1px solid $border-color;
+	z-index: 10000;
+	background-color: $bg-body;
+	margin-left: 220px;
+
+	.navbar{
+		margin: auto;
+	}
+} 
+
+.sidebar-small .header{
+	width: calc(100% - 70px);
+	margin-left: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+ 	.header {
+ 		margin-left: 0;
+ 		width: 100%;
+
+ 		.navbar-collapse{
+ 			left: 0!important;
+ 			width: 100%!important;
+ 		}
+  	}
+}
+
+@media only screen and (max-width: 992px) {
+	.sidebar-small .header{
+		width: 100%;
+		margin-left: 0;
+	}
+
+ 	.header {
+ 		.navbar{
+ 			margin: 0;
+	 		
+	 		.navbar-collapse{
+	 			padding: 1rem;
+	 			position: fixed;
+	 			left: 70px;
+	 			top: 70px;
+	 			background-color: $light;
+	 			width: calc(100% - 70px);
+	 			z-index: 10000;
+	 		}
+ 		}
+  	}
+}
+

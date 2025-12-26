@@ -1,0 +1,23 @@
+{
+    "name": "AppGroups",
+    "alias": "appgroups",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppGroups\\Providers\\AppGroupsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/groups",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 20,
+        "position": 600,
+        "name": "Groups",
+        "color": "#2bfdc4",
+        "icon": "fa-light fa-users-medical"
+    }
+}

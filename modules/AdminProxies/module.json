@@ -1,0 +1,23 @@
+{
+    "name": "AdminProxies",
+    "alias": "adminproxies",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminProxies\\Providers\\AdminProxiesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/proxies",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 600,
+        "name": "Proxies",
+        "color": "#ea009f",
+        "icon": "fa-light fa-router"
+    }
+}

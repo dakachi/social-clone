@@ -1,0 +1,23 @@
+{
+    "name": "AppDashboard",
+    "alias": "appdashboard",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppDashboard\\Providers\\AppDashboardServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/dashboard",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 300000,
+        "name": "Dashboard",
+        "color": "#227dd2",
+        "icon": "fa-light fa-house"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "app/pico",
+    "description": "",
+    "type": "laravel-theme",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "extra": {
+        "theme": {
+            "parent": "",
+            "active": true,
+            "screenshot": "screenshot.png"
+        }
+    }
+}

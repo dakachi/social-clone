@@ -1,0 +1,11 @@
+{
+    "name": "AppAnalyticsYoutube",
+    "alias": "appanalyticsyoutube",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAnalyticsYoutube\\Providers\\AppAnalyticsYoutubeServiceProvider"
+    ],
+    "files": []
+}

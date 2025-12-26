@@ -1,0 +1,38 @@
+.badge {
+    &.badge {
+        @include badge("default", $gray-200, $gray-700, ""); 
+    }
+
+    &.badge-primary {
+        @include badge("default", $blue, $light, ""); 
+    }
+
+    &.badge-success {
+        @include badge("default", $green, $light, ""); 
+    }
+
+    &.badge-danger {
+        @include badge("default", $red, $light, ""); 
+    }
+
+    &.badge-warning {
+        @include badge("default", $orange, $light, ""); 
+    }
+
+    &.badge-info {
+        @include badge("default", $purple, $light, ""); 
+    }
+
+    &.badge-dark {
+        @include badge("default", $dark, $light, ""); 
+    }
+
+    &.badge-sm {
+        padding: .3125rem .375rem;
+    }
+
+    &.badge-lg {
+        padding: .5625rem .6875rem;
+        font-size: .8125rem;
+    }
+}

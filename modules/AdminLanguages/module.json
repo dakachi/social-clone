@@ -1,0 +1,41 @@
+{
+    "name": "AdminLanguages",
+    "alias": "adminlanguages",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminLanguages\\Providers\\AdminLanguagesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/languages",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "More",
+        "position": 25000,
+        "name": "Languages",
+        "color": "#a0dbba",
+        "icon": "fa-light fa-earth-americas",
+        "sub_menu": [
+            {
+                "uri": "admin/languages/create",
+                "name": "Add new",
+                "position": 40,
+                "icon": "fa-light fa-earth-americas",
+                "color": "#bf82e5"
+            },
+            {
+                "uri": "admin/languages",
+                "name": "View All Languages",
+                "position": 40,
+                "icon": "fa-light fa-earth-americas",
+                "color": "#bf82e5"
+            }
+            
+        ]
+    }
+}

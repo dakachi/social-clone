@@ -1,0 +1,33 @@
+{
+    "name": "AdminSupportTypes",
+    "alias": "adminsupporttypes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSupportTypes\\Providers\\AdminSupportTypesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/support/types",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "User Portal",
+        "position": 3000,
+        "name": "Support",
+        "color": "#1af1c8",
+        "icon": "fa-light fa-life-ring",
+        "sub_menu": [
+            {
+                "uri": "admin/support/types",
+                "name": "Manage Types",
+                "position": 10,
+                "icon": "fa-light fa-life-ring",
+                "color": "#e5ae7c"
+            }
+        ]
+    }
+}

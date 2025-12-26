@@ -1,0 +1,23 @@
+{
+    "name": "AppMediaSearch",
+    "alias": "appmediasearch",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppMediaSearch\\Providers\\AppMediaSearchServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/search-media",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 10,
+        "position": 1500,
+        "name": "Search Media Online",
+        "color": "#FE5D26",
+        "icon": "fa-light fa-photo-film-music"
+    }
+}

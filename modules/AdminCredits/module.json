@@ -1,0 +1,24 @@
+{
+    "name": "AdminCredits",
+    "alias": "admincredits",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCredits\\Providers\\AdminCreditsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/credits",
+        "role": "admin",
+        "platform": 1,
+        "section": "",
+        "tab_id": 0,
+        "tab_name": "",
+        "position": 200000,
+        "name": "Credits Usage",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gem"
+    }
+}

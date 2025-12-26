@@ -1,0 +1,253 @@
+.btn{
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    border-radius: .375rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: .375rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    font-size: .8125rem;
+    outline: none;
+
+    i{
+		font-size: 1.125rem;
+    	line-height: 0 !important;
+	    margin-top: 2px;
+    }
+
+    &.btn-xs {
+	    height: 1.75rem;
+	    padding-left: .5rem;
+	    padding-right: .5rem;
+	    font-weight: 500;
+	    font-size: .6875rem;
+	    gap: .25rem;
+
+	    i{
+	    	font-size: .875rem!important;
+	    }
+	}
+
+	&.btn-sm {
+	    height: 2rem!important;
+	    padding-left: .75rem!important;
+	    padding-right: .75rem!important;
+	    font-weight: 500!important;
+	    font-size: .75rem!important;
+	    gap: .275rem!important;
+
+	    i{
+	    	font-size: .875rem!important;
+	    }
+	}
+
+	&.btn-lg {
+	    height: 3rem!important;
+	    padding-left: 1.25rem!important;
+	    padding-right: 1.25rem!important;
+	    font-weight: 500!important;
+	    font-size: .875rem!important;
+	    gap: .5rem!important;
+
+	    i{
+	    	font-size: 1.25rem!important;
+	    }
+	}
+
+	&.btn-link {
+	    color: $blue;
+	    font-size: .8125rem;
+	    height: auto;
+	    padding-bottom: .25em;
+	    padding-left: 0;
+	    padding-right: 0;
+	    border-radius: 0;
+	    background-color: transparent;
+	    border-bottom: 1px dashed $blue;
+	    text-decoration: none;
+
+	    &.btn-xs {
+		    font-size: .55rem;
+		}
+
+		&.btn-sm {
+		    font-size: .75rem;
+		}
+
+		&.btn-lg {
+		    font-size: .875rem
+		}
+
+		&:hover{
+			border-bottom: 1px dashed $blue;
+		}
+	}
+
+    &.btn-light {
+		@include btn($light, $light, $gray-700, $gray-700, $gray-300, "", "", $light-box-shadow); 
+		&.btn-clear{
+			@include btn( $transparent , $secondary, $gray-700, $gray-700, $transparent, $gray-300); 
+		}
+
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-secondary {
+		@include btn($secondary, $secondary-active, $gray-700, $gray-700, $gray-200, "", "", $default-box-shadow);
+		&.btn-icon{
+			@include btn-icon;
+		} 
+	}
+
+	&.btn-primary {
+		@include btn($blue, $blue-active, $light, $light, $blue, "", "", $blue-box-shadow); 
+		&.btn-outline{
+			@include btn( $blue-100 , $blue, $blue, $light, $blue-300); 
+		}
+		&.btn-clear{
+			@include btn( $transparent , $blue, $blue, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-success {
+		@include btn($green, $green-active, $light, $light, $green, "", "", $green-box-shadow); 
+		&.btn-outline{
+			@include btn( $green-100 , $green, $green, $light, $green-300); 
+		}
+		&.btn-clear{
+			@include btn( $transparent , $green, $green, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-danger {
+		@include btn($red, $red-active, $light, $light, $red, "", "", $red-box-shadow); 
+		&.btn-outline{
+			@include btn( $red-100 , $red, $red, $light, $red-300); 
+		}
+		&.btn-clear{
+			@include btn( $transparent , $red, $red, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-warning {
+		@include btn($orange, $orange-active, $light, $light, $orange, "", "", $orange-box-shadow);
+		&.btn-outline{
+			@include btn( $orange-100 , $orange, $orange, $light, $orange-300); 
+		} 
+		&.btn-clear{
+			@include btn( $transparent , $orange, $orange, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-info {
+		@include btn($purple, $purple-active, $light, $light, $purple, "", "", $purple-box-shadow);
+		&.btn-outline{
+			@include btn( $purple-100 , $purple, $purple, $light, $purple-300); 
+		} 
+		&.btn-clear{
+			@include btn( $transparent , $purple, $purple, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-dark {
+		@include btn($dark, $dark-active, $light, $light, $dark, "", "", $dark-box-shadow);
+		&.btn-outline{
+			@include btn( $gray-300 , $dark, $dark, $light, $gray-500); 
+		} 
+		&.btn-clear{
+			@include btn( $transparent , $dark, $dark, $light, $transparent); 
+		}
+		&.btn-icon{
+			@include btn-icon;
+		}
+	}
+
+	&.btn-hover-dark:hover {
+		background-color: $dark!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-hover-primary:hover {
+		background-color: $primary!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-hover-success:hover {
+		background-color: $success!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-hover-danger:hover {
+		background-color: $danger!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-hover-warning:hover {
+		background-color: $warning!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-hover-info:hover {
+		background-color: $info!important;
+		color: $light!important;
+
+		i{
+			color: $light!important;
+		}
+	}
+
+	&.btn-input {
+	    cursor: auto;
+	    color: $gray-700;
+	    border-color: $gray-300!important;
+	    background-color: $light-active!important;
+
+	    &.btn-icon{
+			@include btn-icon;
+		}
+	}
+}
+
+

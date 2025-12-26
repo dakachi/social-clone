@@ -1,0 +1,32 @@
+{
+    "name": "AdminEmbedCode",
+    "alias": "adminembedcode",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminEmbedCode\\Providers\\AdminEmbedCodeServiceProvider"
+    ],
+    "files": [],
+    "menu": {
+        "uri": "admin/embed-code",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 20000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/embed-code",
+                "name": "Embed Code",
+                "position": 250000,
+                "icon": "fa-light fa-bell",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

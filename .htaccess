@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  Options -MultiViews -Indexes
+
+  <FilesMatch "^\.(env|env\.example|git|gitattributes|gitignore|htaccess|htpasswd|ini|log|md|sql|sh|lock)$">
+    Require all denied
+  </FilesMatch>
+  RewriteRule ^(\.env|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock)$ - [F,L]
+  RewriteRule ^(vendor|node_modules)/ - [F,L]
+
+  <IfModule mod_dir.c>
+    DirectorySlash Off
+  </IfModule>
+
+  RewriteRule ^installer$ installer/index.php [L,QSA]
+  RewriteRule ^installer/?$ installer/index.php [L,QSA]
+  RewriteRule ^installer/(.*)$ installer/index.php [L,QSA]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>

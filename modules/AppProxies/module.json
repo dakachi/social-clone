@@ -1,0 +1,23 @@
+{
+    "name": "AppProxies",
+    "alias": "appproxies",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppProxies\\Providers\\AppProxiesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/proxies",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 20,
+        "position": 550,
+        "name": "Proxies",
+        "color": "#ea009f",
+        "icon": "fa-light fa-router"
+    }
+}

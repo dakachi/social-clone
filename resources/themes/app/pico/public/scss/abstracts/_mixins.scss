@@ -1,0 +1,320 @@
+@mixin btn($background-color, $background-color-hover,  $color, $color-hover: "", $border-color: "", $border-color-hover: "", $box-shadow: "", $box-shadow-hover: "") {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: .375rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  gap: .375rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: .8125rem;
+  outline: none;
+
+  background-color: $background-color;
+  color: $color;
+
+  @if($border-color != ""){
+    border-color: $border-color;
+  }
+
+  @if($box-shadow != ""){
+    box-shadow: $box-shadow;
+  }else{
+    box-shadow: none;
+  }
+
+  &:hover,&:focus,&:active,&.active{
+    background-color: $background-color-hover;
+
+    @if($color-hover != ""){
+      color: $color-hover;
+    }
+
+    @if($box-shadow-hover != ""){
+      box-shadow: $box-shadow-hover;
+    }else{
+      box-shadow: none;
+    }
+
+    @if($border-color-hover != ""){
+      border-color: $border-color-hover;
+    }
+  }
+}
+
+@mixin btn-icon {
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  gap: 0;
+  width: 2.5rem; 
+  i{
+    font-size: 1.125rem;
+  }
+
+  &.btn-sm{
+    width: 2rem; 
+    i{
+      font-size: 1.125rem!important;
+    }
+  }
+
+  &.btn-lg{
+    width: 3rem; 
+    i{
+      font-size: 1.75rem!important;
+    }
+  }
+}
+
+.btn-input i {
+  color: $gray-500;
+}
+
+@mixin badge($type: "", $background-color: "", $text-color: "",  $border-color: "") {
+  justify-content: center;
+  line-height: 1;
+  border-radius: .25rem;
+  padding: .5rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: .6875rem;
+  display: inline-flex;
+  align-items: center;
+  background-color: $background-color;
+  color: $text-color;
+
+  @if($border-color != ""){
+    border-color: $border-color;
+  }
+
+  &.badge-outline{
+    background-color: rgba($background-color, 0.2);
+    border-color: rgba($background-color, 0.4);
+    color: $background-color;
+  }
+
+  &.badge-outline.badge-light{
+    background-color: rgba($background-color, 0.2);
+    border-color: rgba($text-color, 0.2);
+    color: rgba($text-color, 0.8);
+  }
+
+  &.badge-pill{
+      border-radius: 1.875rem;
+      padding-left: .625rem;
+      padding-right: .625rem;
+  }
+
+  &.badge-dot{
+    color: #fff;
+    background-color: $background-color;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &.badge-xs {
+    font-size: .625rem;
+    padding: .1875rem .3125rem;
+  }
+}
+
+@mixin position-absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  top: $top;
+}
+
+@mixin position-relative($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: relative;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  top: $top;
+}
+
+@mixin font-size($px-size, $base-px-size: $base-font-size) {
+  font-size: $px-size;
+  font-size: rem($px-size, $base-px-size);
+}
+
+@mixin above($width) {
+  @media only screen and (min-width: $width) {
+    @content
+  }
+}
+
+@mixin below($width) {
+  @media only screen and (max-width: $width - 1) {
+    @content
+  }
+}
+
+@mixin between($min-width, $max-width) {
+  @media only screen and (min-width: $min-width) and (max-width: $max-width - 1) {
+    @content
+  }
+}
+
+@mixin truncate($overflow: ellipsis) {
+  overflow: hidden;
+  text-overflow: $overflow;
+  white-space: nowrap;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+  font-size: $font-size * 1px;
+  // font-size: $font-size * 0.1rem;
+  // example using rem values and 62.5% font-size so 1rem = 10px
+
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height / $font-size;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: #{$letter-spacing / $font-size}em;
+  }
+}
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($path+".eot");
+    src: url($path+".eot?#iefix") format("embedded-opentype"), url($path+".woff")
+        format("woff"), url($path+".ttf") format("truetype"), url($path+".svg##{$font-name}")
+        format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin pseudo(
+  $width: 100%,
+  $height: 100%,
+  $display: inline-block,
+  $pos: absolute,
+  $content: ""
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  @include box($width, $height);
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet * 1px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: $large * 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop * 1px) {
+    @content;
+  }
+}
+
+$elements: landing, header, modal, very-important-modal;
+@mixin z-index($id) {
+  z-index: index($elements, $id);
+}
+
+@mixin fade($type) {
+  @if $type== "hide" {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s;
+  } @else if $type== "show" {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 1s;
+  }
+}
+
+@mixin skew-background-transition($initial, $hover, $inverted: false) {
+  background: linear-gradient(
+    90deg,
+    $hover 0%,
+    $hover 50%,
+    $initial 50%,
+    $initial 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+
+  background-position: right bottom;
+  @if $inverted {
+    background-position: left bottom;
+  }
+  transition: background-position 0.25s ease-out;
+
+  &:hover {
+    background-position: left bottom;
+    @if $inverted {
+      background-position: right bottom;
+    }
+  }
+}
+
+%clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}

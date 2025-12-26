@@ -1,0 +1,33 @@
+{
+    "name": "AdminAffiliateSettings",
+    "alias": "adminaffiliatesettings",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAffiliateSettings\\Providers\\AdminAffiliateSettingsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/affiliate-setings",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/affiliate-setings",
+                "name": "Affiliate",
+                "position": 400000,
+                "icon": "fa-light fa-bell",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

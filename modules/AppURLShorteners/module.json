@@ -1,0 +1,24 @@
+{
+    "name": "AppURLShorteners",
+    "alias": "appurlshorteners",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppURLShorteners\\Providers\\AppURLShortenersServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/url-shorteners",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": "",
+        "tab_name": "",
+        "position": 190000,
+        "name": "URL Shorteners",
+        "color": "#0f305e",
+        "icon": "fa-light fa-gear"
+    }
+}

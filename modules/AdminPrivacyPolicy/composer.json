@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminprivacypolicy",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminPrivacyPolicy\\": "app/",
+            "Modules\\AdminPrivacyPolicy\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminPrivacyPolicy\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminPrivacyPolicy\\Tests\\": "tests/"
+        }
+    }
+}

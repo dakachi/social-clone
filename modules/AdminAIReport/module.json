@@ -1,0 +1,24 @@
+{
+    "name": "AdminAIReport",
+    "alias": "adminaireport",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAIReport\\Providers\\AdminAIReportServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/ai/report",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 10,
+        "tab_name": "AI Settings",
+        "position": 10000,
+        "name": "AI Report",
+        "color": "#4c482d",
+        "icon": "fa-light fa-chart-mixed"
+    }
+}

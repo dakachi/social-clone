@@ -1,0 +1,34 @@
+{
+    "name": "AdminAffiliate",
+    "alias": "adminaffiliate",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAffiliate\\Providers\\AdminAffiliateServiceProvider"
+    ],
+
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/affiliate/report",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 45000,
+        "name": "Affiliate",
+        "color": "#4988d1",
+        "icon": "fa-light fa-handshake",
+        "sub_menu": [
+            {
+                "uri": "admin/affiliate/report",
+                "name": "Affiliate Reports",
+                "position": 50,
+                "icon": "fa-light fa-brain-circuit",
+                "color": "#3390c3"
+            }
+        ]
+    }
+}

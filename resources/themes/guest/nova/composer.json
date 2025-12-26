@@ -1,0 +1,10 @@
+{
+    "name": "guest/nova",
+    "description": "Nova theme for guest",
+    "type": "laravel-theme",
+    "extra": {
+        "laravel-theme": {
+            "name": "guest/nova"
+        }
+    }
+}

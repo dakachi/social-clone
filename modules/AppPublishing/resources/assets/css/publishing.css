@@ -1,0 +1,64 @@
+.cpv-grid {
+    display: grid;
+    gap: 4px;
+}
+
+.cpv-grid .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+ 	.compose .compose-media{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
+		z-index: 1000;
+	}
+
+	.compose .compose-editor{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1002;
+	}
+
+	.compose .compose-preview{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1001;
+	}
+
+	.compose .compose-media.active,
+	.compose .compose-preview.active{
+		z-index: 1003;
+	}
+}
+
+.add-button {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    z-index: 10;
+    padding: 2px 6px;
+    font-size: 11px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.fc-daygrid-day:hover .add-button {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}

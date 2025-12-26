@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminsupportlabels",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminSupportLabels\\": "app/",
+            "Modules\\AdminSupportLabels\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminSupportLabels\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminSupportLabels\\Tests\\": "tests/"
+        }
+    }
+}

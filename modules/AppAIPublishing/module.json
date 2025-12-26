@@ -1,0 +1,23 @@
+{
+    "name": "AppAIPublishing",
+    "alias": "appaipublishing",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppAIPublishing\\Providers\\AppAIPublishingServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/ai-publishing",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "position": 240000,
+        "name": "AI Publishing",
+        "color": "#217135",
+        "icon": "fa-light fa-wand-magic-sparkles"
+    }
+}

@@ -1,0 +1,17 @@
+.emojionearea, .emojionearea.form-control{
+	border: 1px solid $border-color!important;
+	border-radius: 6px 6px 0 0;
+	box-shadow: none;
+}
+
+.input-emoji{
+	display: none!important;
+}
+
+.emojionearea.input-emoji{
+	display: block!important;
+}
+
+.emojionearea-editor{
+	border: 1px solid $gray-200;
+}

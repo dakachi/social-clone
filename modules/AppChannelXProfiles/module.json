@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelXProfiles",
+    "alias": "appchannelxprofiles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelXProfiles\\Providers\\AppChannelXProfilesServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/x/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "X profiles",
+        "color": "#000",
+        "icon": "fa-brands fa-x-twitter"
+    }
+}

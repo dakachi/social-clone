@@ -1,0 +1,23 @@
+{
+    "name": "AppWatermark",
+    "alias": "appwatermark",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppWatermark\\Providers\\AppWatermarkServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/watermark",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 20,
+        "position": 600,
+        "name": "Watermark",
+        "color": "#98fc87",
+        "icon": "fa-light fa-medal"
+    }
+}

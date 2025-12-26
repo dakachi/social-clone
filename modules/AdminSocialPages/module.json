@@ -1,0 +1,24 @@
+{
+    "name": "AdminSocialPages",
+    "alias": "adminsocialpages",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSocialPages\\Providers\\AdminSocialPagesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/frontend/social-pages",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 50,
+        "tab_name": "Frontend",
+        "position": 17000,
+        "name": "Social Pages",
+        "color": "#fc61c9",
+        "icon": "fa-light fa-square-up-right"
+    }
+}

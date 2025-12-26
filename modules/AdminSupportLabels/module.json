@@ -1,0 +1,33 @@
+{
+    "name": "AdminSupportLabels",
+    "alias": "adminsupportlabels",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSupportLabels\\Providers\\AdminSupportLabelsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/support/labels",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "User Portal",
+        "position": 3000,
+        "name": "Support",
+        "color": "#d2fbff",
+        "icon": "fa-light fa-life-ring",
+        "sub_menu": [
+            {
+                "uri": "admin/support/labels",
+                "name": "Manage Labels",
+                "position": 20,
+                "icon": "fa-light fa-blog",
+                "color": "#558628"
+            }
+        ]
+    }
+}

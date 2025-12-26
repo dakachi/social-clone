@@ -1,0 +1,23 @@
+{
+    "name": "PaymentPaypal",
+    "alias": "paymentpaypal",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PaymentPaypal\\Providers\\PaymentPaypalServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "paypal",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Paypal One-Time",
+        "color": "#66b610",
+        "icon": "fa-brands fa-paypal"
+    }
+}

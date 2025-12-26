@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/admincrons",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminCrons\\": "app/",
+            "Modules\\AdminCrons\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminCrons\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminCrons\\Tests\\": "tests/"
+        }
+    }
+}

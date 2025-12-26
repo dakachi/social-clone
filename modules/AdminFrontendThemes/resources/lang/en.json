@@ -1,0 +1,19 @@
+{
+    "Theme does not exist or is unavailable.": "Theme does not exist or is unavailable.",
+    "Theme activated successfully!": "Theme activated successfully!",
+    "Invalid file.": "Invalid file.",
+    "Theme already exists.": "Theme already exists.",
+    "theme.json not found in theme package.": "theme.json not found in theme package.",
+    "Theme imported successfully!": "Theme imported successfully!",
+    "Could not open the zip file.": "Could not open the zip file.",
+    "Frontend Theme Manager": "Frontend Theme Manager",
+    "Easily manage and activate guest site themes.": "Easily manage and activate guest site themes.",
+    "Import": "Import",
+    "Active": "Active",
+    "Author": "Author",
+    "Version": "Version",
+    "Use Theme": "Use Theme",
+    "Currently Actived": "Currently Actived",
+    "Frontend": "Frontend",
+    "Themes": "Themes"
+}

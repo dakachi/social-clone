@@ -1,0 +1,24 @@
+{
+    "name": "AdminUserReport",
+    "alias": "adminuserreport",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminUserReport\\Providers\\AdminUserReportServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/users/report",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 40,
+        "tab_name": "User Portal",
+        "position": 45000,
+        "name": "User Report",
+        "color": "#a35cdc",
+        "icon": "fa-light fa-chart-user"
+    }
+}

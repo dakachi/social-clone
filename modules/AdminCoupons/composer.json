@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/admincoupons",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminCoupons\\": "app/",
+            "Modules\\AdminCoupons\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminCoupons\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminCoupons\\Tests\\": "tests/"
+        }
+    }
+}

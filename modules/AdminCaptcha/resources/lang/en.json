@@ -1,0 +1,20 @@
+{
+    "It looks like the captcha was incorrect. Please try again.": "It looks like the captcha was incorrect. Please try again.",
+    "CAPTCHA Settings": "CAPTCHA Settings",
+    "Configure bot protection using captcha verification and options": "Configure bot protection using captcha verification and options",
+    "General configuration": "General configuration",
+    "CAPTCHA Type": "CAPTCHA Type",
+    "Disable": "Disable",
+    "Google reCaptcha V2": "Google reCaptcha V2",
+    "Cloudflare Turnstile": "Cloudflare Turnstile",
+    "Status": "Status",
+    "Enable": "Enable",
+    "Google site key": "Google site key",
+    "Enter API Key": "Enter API Key",
+    "Google secret key": "Google secret key",
+    "Cloudflare site key": "Cloudflare site key",
+    "Cloudflare secret key": "Cloudflare secret key",
+    "Save changes": "Save changes",
+    "Settings": "Settings",
+    "Captcha": "Captcha"
+}

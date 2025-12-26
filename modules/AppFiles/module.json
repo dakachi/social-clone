@@ -1,0 +1,30 @@
+{
+    "name": "AppFiles",
+    "alias": "appfiles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppFiles\\Providers\\AppFilesServiceProvider"
+    ],
+    "files": [],
+    "assets": {
+        "css": [],
+        "js": [
+            "resources/assets/js/filerobot-image-editor.min.js",
+            "resources/assets/js/files.js"
+        ]
+    },
+    "permission": true,
+    "menu": {
+        "uri": "app/files",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 10,
+        "position": 1500,
+        "name": "Files",
+        "color": "#f323fc",
+        "icon": "fa-light fa-folder-open"
+    }
+}

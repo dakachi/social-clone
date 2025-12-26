@@ -1,0 +1,23 @@
+{
+    "name": "PaymentPaypalRecurring",
+    "alias": "paymentpaypalrecurring",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PaymentPaypalRecurring\\Providers\\PaymentPaypalRecurringServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "paypal_recurring",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Paypal Recurring",
+        "color": "#66b610",
+        "icon": "fa-brands fa-paypal"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/paymentstriperecurring",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\PaymentStripeRecurring\\": "app/",
+            "Modules\\PaymentStripeRecurring\\Database\\Factories\\": "database/factories/",
+            "Modules\\PaymentStripeRecurring\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\PaymentStripeRecurring\\Tests\\": "tests/"
+        }
+    }
+}

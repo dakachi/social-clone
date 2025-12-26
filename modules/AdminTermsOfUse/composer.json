@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/admintermsofuse",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminTermsOfUse\\": "app/",
+            "Modules\\AdminTermsOfUse\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminTermsOfUse\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminTermsOfUse\\Tests\\": "tests/"
+        }
+    }
+}

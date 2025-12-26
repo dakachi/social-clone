@@ -1,0 +1,24 @@
+{
+    "name": "AdminPaymentSubscriptions",
+    "alias": "adminpaymentsubscriptions",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPaymentSubscriptions\\Providers\\AdminPaymentSubscriptionsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/payment/subscriptions",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 25000,
+        "name": "Payment Subscriptions",
+        "color": "#cf83fd",
+        "icon": "fa-light fa-money-bill-wheat"
+    }
+}

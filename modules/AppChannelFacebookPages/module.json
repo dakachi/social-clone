@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelFacebookPages",
+    "alias": "appchannelfacebookpages",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelFacebookPages\\Providers\\AppChannelFacebookPagesServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/facebook/page",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Facebook pages",
+        "color": "#1877F2",
+        "icon": "fa-brands fa-square-facebook"
+    }
+}

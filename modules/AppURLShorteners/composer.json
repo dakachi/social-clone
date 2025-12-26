@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appurlshorteners",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppURLShorteners\\": "app/",
+            "Modules\\AppURLShorteners\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppURLShorteners\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppURLShorteners\\Tests\\": "tests/"
+        }
+    }
+}

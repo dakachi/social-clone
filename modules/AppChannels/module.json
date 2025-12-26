@@ -1,0 +1,23 @@
+{
+    "name": "AppChannels",
+    "alias": "appchannels",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannels\\Providers\\AppChannelsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "app/channels",
+        "role": "client",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 10,
+        "position": 50000,
+        "name": "Channels",
+        "color": "#2d0b24",
+        "icon": "fa-light fa-chart-network"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "AdminCreditRates",
+    "alias": "admincreditrates",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCreditRates\\Providers\\AdminCreditRatesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/credit-rates",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 80000,
+        "name": "Credit Rates",
+        "color": "#de2474",
+        "icon": "fa-light fa-coins"
+    }
+}

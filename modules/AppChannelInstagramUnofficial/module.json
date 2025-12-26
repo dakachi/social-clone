@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelInstagramUnofficial",
+    "alias": "appchannelinstagramunofficial",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelInstagramUnofficial\\Providers\\AppChannelInstagramUnofficialServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/instagram_unofficial/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Instagram Unofficial",
+        "color": "#c32aa3  ",
+        "icon": "fa-brands fa-instagram"
+    }
+}

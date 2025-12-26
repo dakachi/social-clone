@@ -1,0 +1,33 @@
+{
+    "name": "AdminMailServer",
+    "alias": "adminmailserver",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminMailServer\\Providers\\AdminMailServerServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings/mail-server",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#1f263d",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/mail-server",
+                "name": "Mail Server",
+                "position": 680000,
+                "icon": "fa-light fa-gear",
+                "color": "#f06ce5"
+            }
+        ]
+    }
+}

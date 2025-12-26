@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelInstagramProfiles",
+    "alias": "appchannelinstagramprofiles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelInstagramProfiles\\Providers\\AppChannelInstagramProfilesServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/instagram/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Instagram profiles",
+        "color": "#c32aa3  ",
+        "icon": "fa-brands fa-instagram"
+    }
+}

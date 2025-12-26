@@ -1,0 +1,24 @@
+{
+    "name": "AdminFaqs",
+    "alias": "adminfaqs",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminFaqs\\Providers\\AdminFaqsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/faqs",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "Frontend",
+        "position": 48000,
+        "name": "FAQs",
+        "color": "#050c7f",
+        "icon": "fa-light fa-comments-question"
+    }
+}

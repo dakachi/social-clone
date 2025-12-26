@@ -1,0 +1,24 @@
+{
+    "name": "AdminCrons",
+    "alias": "admincrons",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCrons\\Providers\\AdminCronsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/crons",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "More",
+        "position": 20000,
+        "name": "Crons",
+        "color": "#27390a",
+        "icon": "fa-light fa-clock-rotate-left"
+    }
+}

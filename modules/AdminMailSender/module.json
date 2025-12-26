@@ -1,0 +1,33 @@
+{
+    "name": "AdminMailSender",
+    "alias": "adminmailsender",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminMailSender\\Providers\\AdminMailSenderServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/mail-sender",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "",
+        "position": 2900,
+        "name": "Mail System",
+        "color": "#248bcb",
+        "icon": "fa-light fa-envelopes-bulk",
+        "sub_menu": [
+            {
+                "uri": "admin/mail-sender",
+                "name": "Mail Sender",
+                "position": 100,
+                "icon": "fa-light fa-envelopes-bulk",
+                "color": "#f7d536"
+            }
+        ]
+    }
+}

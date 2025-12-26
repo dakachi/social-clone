@@ -1,0 +1,24 @@
+{
+    "name": "Auth",
+    "alias": "auth",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Auth\\Providers\\AuthServiceProvider",
+        "Modules\\Auth\\Providers\\EventServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "auth",
+        "role": "client",
+        "platform": -1,
+        "section": "",
+        "tab_id": 2,
+        "position": 0,
+        "name": "Auth",
+        "color": "#6ae5f8",
+        "icon": "fa-light fa-arrow-right-to-bracket"
+    }
+}

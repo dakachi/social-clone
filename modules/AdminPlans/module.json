@@ -1,0 +1,25 @@
+{
+    "name": "AdminPlans",
+    "alias": "adminplans",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPlans\\Providers\\AdminPlansServiceProvider",
+        "Modules\\AdminPlans\\Providers\\EventServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/plans",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 100000,
+        "name": "Plans",
+        "color": "#999360",
+        "icon": "fa-light fa-box-open"
+    }
+}

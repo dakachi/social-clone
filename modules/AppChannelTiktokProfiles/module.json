@@ -1,0 +1,23 @@
+{
+    "name": "AppChannelTiktokProfiles",
+    "alias": "appchanneltiktokprofiles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AppChannelTiktokProfiles\\Providers\\AppChannelTiktokProfilesServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "app/tiktok/profile",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Tiktok profiles",
+        "color": "#010101",
+        "icon": "fa-brands fa-tiktok"
+    }
+}

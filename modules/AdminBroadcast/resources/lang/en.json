@@ -1,0 +1,15 @@
+{
+    "Broadcast Configuration": "Broadcast Configuration",
+    "Configure real-time broadcast settings for your application.": "Configure real-time broadcast settings for your application.",
+    "General configuration": "General configuration",
+    "Broadcast Driver": "Broadcast Driver",
+    "Disable": "Disable",
+    "Pusher": "Pusher",
+    "App ID": "App ID",
+    "App Key": "App Key",
+    "App Secret": "App Secret",
+    "Cluster": "Cluster",
+    "Save changes": "Save changes",
+    "Settings": "Settings",
+    "Broadcast": "Broadcast"
+}

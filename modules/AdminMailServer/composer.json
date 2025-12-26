@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminmailserver",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminMailServer\\": "app/",
+            "Modules\\AdminMailServer\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminMailServer\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminMailServer\\Tests\\": "tests/"
+        }
+    }
+}

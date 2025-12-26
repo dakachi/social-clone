@@ -1,0 +1,33 @@
+{
+    "name": "AdminSystemInformation",
+    "alias": "adminsysteminformation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSystemInformation\\Providers\\AdminSystemInformationServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/settings",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#9a51b9",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/settings/system-information",
+                "name": "System Information",
+                "position": 200000,
+                "icon": "fa-light fa-gear",
+                "color": "#16390f"
+            }
+        ]
+    }
+}

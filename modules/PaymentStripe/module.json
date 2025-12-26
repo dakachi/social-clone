@@ -1,0 +1,23 @@
+{
+    "name": "PaymentStripe",
+    "alias": "paymentstripe",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PaymentStripe\\Providers\\PaymentStripeServiceProvider"
+    ],
+    "files": [],
+    "permission": false,
+    "menu": {
+        "uri": "stripe",
+        "role": "client",
+        "platform": 1,
+        "section": "",
+        "tab_id": 1,
+        "position": 1500,
+        "name": "Stripe One-Time",
+        "color": "#66b610",
+        "icon": "fa-brands fa-paypal"
+    }
+}

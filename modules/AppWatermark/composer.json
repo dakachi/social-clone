@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appwatermark",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppWatermark\\": "app/",
+            "Modules\\AppWatermark\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppWatermark\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppWatermark\\Tests\\": "tests/"
+        }
+    }
+}

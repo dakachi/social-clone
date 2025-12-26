@@ -1,0 +1,33 @@
+{
+    "name": "AdminAICategories",
+    "alias": "adminaicategories",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAICategories\\Providers\\AdminAICategoriesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/ai/categories",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 10,
+        "tab_name": "AI Settings",
+        "position": 5000,
+        "name": "AI Templates",
+        "color": "#2e2ae7",
+        "icon": "fa-light fa-brain-circuit",
+        "sub_menu": [
+            {
+                "uri": "admin/ai/categories",
+                "name": "Manage Categories",
+                "position": 40,
+                "icon": "fa-light fa-blog",
+                "color": "#4e9ba8"
+            }
+        ]
+    }
+}

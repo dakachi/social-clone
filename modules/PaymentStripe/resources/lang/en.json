@@ -1,0 +1,16 @@
+{
+    "Stripe Configuration": "Stripe Configuration",
+    "One-time Payment": "One-time Payment",
+    "Enable": "Enable",
+    "Disable": "Disable",
+    "Publishable key": "Publishable key",
+    "Live": "Live",
+    "Sandbox": "Sandbox",
+    "Secret key": "Secret key",
+    "Webhook Secret": "Webhook Secret",
+    "Close": "Close",
+    "Save changes": "Save changes",
+    "Stripe One-Time Payment": "Stripe One-Time Payment",
+    "Status": "Status",
+    "Stripe One-Time": "Stripe One-Time"
+}

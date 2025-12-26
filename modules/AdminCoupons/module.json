@@ -1,0 +1,24 @@
+{
+    "name": "AdminCoupons",
+    "alias": "admincoupons",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminCoupons\\Providers\\AdminCouponsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/coupons",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 30,
+        "tab_name": "Finance",
+        "position": 50000,
+        "name": "Coupons",
+        "color": "#de2474",
+        "icon": "fa-light fa-badge-percent"
+    }
+}

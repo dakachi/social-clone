@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appaicontents",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppAIContents\\": "app/",
+            "Modules\\AppAIContents\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppAIContents\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppAIContents\\Tests\\": "tests/"
+        }
+    }
+}

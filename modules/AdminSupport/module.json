@@ -1,0 +1,40 @@
+{
+    "name": "AdminSupport",
+    "alias": "adminsupport",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminSupport\\Providers\\AdminSupportServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/support",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 1,
+        "tab_name": "",
+        "position": 3000,
+        "name": "Support",
+        "color": "#248bcb",
+        "icon": "fa-light fa-life-ring",
+        "sub_menu": [
+            {
+                "uri": "admin/support/new-ticket",
+                "name": "New Ticket",
+                "position": 40,
+                "icon": "fa-light fa-life-ring",
+                "color": "#f7d536"
+            },
+            {
+                "uri": "admin/support",
+                "name": "View All Tickets",
+                "position": 30,
+                "icon": "fa-light fa-life-ring",
+                "color": "#469cc0"
+            }
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/appchanneltiktokprofiles",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AppChannelTiktokProfiles\\": "app/",
+            "Modules\\AppChannelTiktokProfiles\\Database\\Factories\\": "database/factories/",
+            "Modules\\AppChannelTiktokProfiles\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AppChannelTiktokProfiles\\Tests\\": "tests/"
+        }
+    }
+}

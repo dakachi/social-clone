@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminpaymentmanualconfig",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminPaymentManualConfig\\": "app/",
+            "Modules\\AdminPaymentManualConfig\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminPaymentManualConfig\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminPaymentManualConfig\\Tests\\": "tests/"
+        }
+    }
+}

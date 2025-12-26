@@ -1,0 +1,11 @@
+{
+    "name": "AdminAddons",
+    "alias": "adminaddons",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAddons\\Providers\\AdminAddonsServiceProvider"
+    ],
+    "files": []
+}

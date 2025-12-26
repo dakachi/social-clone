@@ -1,0 +1,14 @@
+{
+  "resources/themes/app/pico/assets/css/app.css": {
+    "file": "js/app2.js",
+    "name": "app",
+    "src": "resources/themes/app/pico/assets/css/app.css",
+    "isEntry": true
+  },
+  "resources/themes/app/pico/assets/js/app.js": {
+    "file": "js/app.js",
+    "name": "app",
+    "src": "resources/themes/app/pico/assets/js/app.js",
+    "isEntry": true
+  }
+}

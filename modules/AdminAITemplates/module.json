@@ -1,0 +1,33 @@
+{
+    "name": "AdminAITemplates",
+    "alias": "adminaitemplates",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminAITemplates\\Providers\\AdminAITemplatesServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/ai/templates",
+        "role": "admin",
+        "platform": 0,
+        "section": "top",
+        "tab_id": 10,
+        "tab_name": "AI Settings",
+        "position": 5000,
+        "name": "AI Templates",
+        "color": "#4c482d",
+        "icon": "fa-light fa-brain-circuit",
+        "sub_menu": [
+            {
+                "uri": "admin/ai/templates",
+                "name": "View All Templates",
+                "position": 50,
+                "icon": "fa-light fa-brain-circuit",
+                "color": "#983691"
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+<?php
+
+namespace Modules\AdminPaymentSubscriptions\Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class AdminPaymentSubscriptionsDatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // $this->call([]);
+    }
+}

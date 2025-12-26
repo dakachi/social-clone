@@ -1,0 +1,33 @@
+{
+    "name": "AdminPaymentConfigurations",
+    "alias": "adminpaymentconfigurations",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdminPaymentConfigurations\\Providers\\AdminPaymentConfigurationsServiceProvider"
+    ],
+    "files": [],
+    "permission": true,
+    "menu": {
+        "uri": "admin/payment/configuration",
+        "role": "admin",
+        "platform": 1,
+        "section": "top",
+        "tab_id": 60,
+        "tab_name": "Settings",
+        "position": 200000,
+        "name": "Settings",
+        "color": "#4bc6ea",
+        "icon": "fa-light fa-gear",
+        "sub_menu": [
+            {
+                "uri": "admin/payment/configuration",
+                "name": "Payment Configuration",
+                "position": 650000,
+                "icon": "fa-light fa-bell",
+                "color": "#cdd888"
+            }
+        ]
+    }
+}

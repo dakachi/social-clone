@@ -1,0 +1,18 @@
+{
+    "Subscription already canceled or expired.": "Subscription already canceled or expired.",
+    "Subscription canceled successfully.": "Subscription canceled successfully.",
+    "Subscription does not exist (may be already canceled or deleted).": "Subscription does not exist (may be already canceled or deleted).",
+    "Stripe Recurring Configuration": "Stripe Recurring Configuration",
+    "Status": "Status",
+    "Enable": "Enable",
+    "Disable": "Disable",
+    "Publishable key": "Publishable key",
+    "Secret key": "Secret key",
+    "Webhook Secret": "Webhook Secret",
+    "Webhook URL": "Webhook URL",
+    "Required events": "Required events",
+    "Close": "Close",
+    "Save changes": "Save changes",
+    "Stripe Recurring Payment": "Stripe Recurring Payment",
+    "Stripe Recurring": "Stripe Recurring"
+}

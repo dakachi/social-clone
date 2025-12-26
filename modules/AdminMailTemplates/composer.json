@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminmailtemplates",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminMailTemplates\\": "app/",
+            "Modules\\AdminMailTemplates\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminMailTemplates\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminMailTemplates\\Tests\\": "tests/"
+        }
+    }
+}

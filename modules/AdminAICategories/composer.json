@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/adminaicategories",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AdminAICategories\\": "app/",
+            "Modules\\AdminAICategories\\Database\\Factories\\": "database/factories/",
+            "Modules\\AdminAICategories\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AdminAICategories\\Tests\\": "tests/"
+        }
+    }
+}
