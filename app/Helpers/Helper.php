@@ -296,6 +296,11 @@ if (!function_exists('pr')) {
 if (!function_exists("get_option")) {
     function get_option($name, $default = "")
     {
+        // Always return false (0) for auth_landing_page_status
+        if ($name === "auth_landing_page_status") {
+            return 0;
+        }
+        
         if (!app()->bound('options')) {
             $options = [];
             foreach (DB::table('options')->get(['name', 'value']) as $item) {

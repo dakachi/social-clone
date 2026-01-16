@@ -19,6 +19,11 @@ class AdminSettingsController extends Controller
         $posts = $request->all();
 
         foreach ($posts as $name => $value) {
+            // Ignore auth_landing_page_status - it should always be false
+            if ($name === "auth_landing_page_status") {
+                continue;
+            }
+            
             if (is_array($value)) {
                 $value = json_encode($value, JSON_UNESCAPED_UNICODE);
             }

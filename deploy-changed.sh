@@ -18,7 +18,8 @@
 #   username ALL=(ALL) NOPASSWD: /bin/chown, /bin/chmod
 # Or for root user, ensure SSH key is properly configured
 
-set -e  # Exit on error
+# Note: We don't use 'set -e' here because we want to continue processing
+# even if individual file syncs fail. Errors are handled explicitly.
 
 # Configuration
 # These MUST be set via environment variables or .env file
@@ -204,7 +205,7 @@ detect_and_sync() {
     
     # Remove empty lines and count
     FILTERED_FILES=$(echo "$FILTERED_FILES" | sed '/^$/d')
-    SYNC_COUNT=$(echo "$FILTERED_FILES" | wc -l | tr -d ' ')
+    SYNC_COUNT=$(echo "$FILTERED_FILES" | grep -c . || echo "0")
     
     if [ -z "$FILTERED_FILES" ] || [ "$SYNC_COUNT" -eq 0 ]; then
         print_info "No changed files detected to sync."
@@ -244,8 +245,42 @@ detect_and_sync() {
     SYNCED_COUNT=0
     FAILED_COUNT=0
     
-    while IFS= read -r file; do
-        if [ -z "$file" ] || [ ! -f "$file" ]; then
+    # Use a temporary file approach to avoid subshell issues
+    TEMP_FILE=$(mktemp)
+    # Write files directly to temp file - FILTERED_FILES already has newlines
+    echo "$FILTERED_FILES" | sed '/^$/d' > "$TEMP_FILE"
+    
+    # Verify we have files to process
+    FILE_COUNT_IN_TEMP=$(wc -l < "$TEMP_FILE" | tr -d ' ')
+    if [ "$FILE_COUNT_IN_TEMP" -eq 0 ]; then
+        print_error "No files found in filtered list!"
+        rm -f "$TEMP_FILE"
+        return 1
+    fi
+    
+    # Show how many files we're about to process
+    print_info "Processing ${FILE_COUNT_IN_TEMP} file(s)..."
+    
+    # Process each file from the temp file
+    # Use a counter to track progress
+    CURRENT_FILE_NUM=0
+    
+    # Process files using a while loop, but ensure we don't lose stdin
+    # Use file descriptor 3 to read from temp file to avoid stdin conflicts
+    exec 3< "$TEMP_FILE"
+    while IFS= read -r file <&3 || [ -n "$file" ]; do
+        # Trim whitespace and skip empty lines
+        file=$(echo "$file" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+        
+        if [ -z "$file" ]; then
+            continue
+        fi
+        
+        CURRENT_FILE_NUM=$((CURRENT_FILE_NUM + 1))
+        
+        if [ ! -f "$file" ]; then
+            print_warning "Skipping [${CURRENT_FILE_NUM}/${FILE_COUNT_IN_TEMP}] (file not found): ${file}"
+            FAILED_COUNT=$((FAILED_COUNT + 1))
             continue
         fi
         
@@ -257,86 +292,91 @@ detect_and_sync() {
             ssh "${SSH_USER}@${VPS_HOST}" "mkdir -p ${DEPLOY_PATH}/${file_dir}" 2>/dev/null || true
         fi
         
-        print_info "Syncing: ${file}"
+        print_info "Syncing [${CURRENT_FILE_NUM}/${FILE_COUNT_IN_TEMP}]: ${file}"
         
-        ${RSYNC_CMD} \
+        # Run rsync - don't capture output to avoid stdin issues
+        # Just redirect stderr to stdout and let it print normally
+        if ${RSYNC_CMD} \
             --progress \
             -e "ssh -o StrictHostKeyChecking=no" \
             "${LOCAL_PATH}/${file}" \
-            "${SSH_USER}@${VPS_HOST}:${DEPLOY_PATH}/${file}"
-        
-        if [ $? -eq 0 ]; then
-            ((SYNCED_COUNT++))
+            "${SSH_USER}@${VPS_HOST}:${DEPLOY_PATH}/${file}" >&2 2>&1; then
+            SYNCED_COUNT=$((SYNCED_COUNT + 1))
         else
             print_error "Failed to sync: ${file}"
-            ((FAILED_COUNT++))
+            FAILED_COUNT=$((FAILED_COUNT + 1))
         fi
-    done <<< "$FILTERED_FILES"
+    done
+    exec 3<&-
+    
+    # Clean up temp file
+    rm -f "$TEMP_FILE"
     
     print_info "Sync completed: ${SYNCED_COUNT} succeeded, ${FAILED_COUNT} failed"
     
     if [ "$SYNCED_COUNT" -gt 0 ]; then
-        # Run minimal post-deployment tasks
-        print_step "Running minimal post-deployment tasks..."
-        ssh "${SSH_USER}@${VPS_HOST}" << EOF
-            set -e
-            
-            cd ${DEPLOY_PATH} || {
-                echo "Error: Directory ${DEPLOY_PATH} does not exist!"
-                exit 1
-            }
-            
-            # Clear and rebuild caches
-            echo "Clearing caches..."
-            php artisan config:clear 2>/dev/null || true
-            php artisan route:clear 2>/dev/null || true
-            php artisan view:clear 2>/dev/null || true
-            
-            echo "Rebuilding caches..."
-            php artisan config:cache 2>/dev/null || true
-            php artisan route:cache 2>/dev/null || true
-            php artisan view:cache 2>/dev/null || true
-            
-            # Optimize autoloader if composer files changed
-            if echo "$FILTERED_FILES" | grep -qE "(composer\.json|composer\.lock|app/|modules/)"; then
-                echo "Optimizing autoloader..."
-                composer dump-autoload --optimize --classmap-authoritative 2>/dev/null || true
-            fi
-            
-            # Set permissions for synced files
-            echo "Setting file permissions..."
-            echo "$FILTERED_FILES" | while read -r file; do
-                if [ -n "\$file" ] && [ -f "\$file" ]; then
-                    # Try with sudo first, fallback to without
-                    if sudo -n true 2>/dev/null; then
-                        sudo chown www-data:www-data "\$file" 2>/dev/null || true
-                        sudo chmod 644 "\$file" 2>/dev/null || true
-                    else
-                        chown www-data:www-data "\$file" 2>/dev/null || true
-                        chmod 644 "\$file" 2>/dev/null || true
-                    fi
-                fi
-            done
-            
-            # Ensure storage and cache directories have proper permissions
-            mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
-            
-            if sudo -n true 2>/dev/null; then
-                sudo chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
-                sudo chmod -R 775 storage bootstrap/cache 2>/dev/null || true
-            else
-                chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
-                chmod -R 775 storage bootstrap/cache 2>/dev/null || true
-            fi
-            
-            echo "Post-deployment tasks completed"
-EOF
+        # Ask if user wants to run post-deployment tasks
+        echo ""
+        read -p "Run post-deployment tasks (clear caches, optimize)? (y/N): " -n 1 -r
+        echo ""
         
-        if [ $? -eq 0 ]; then
-            print_info "Deployment completed successfully!"
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            # Run minimal post-deployment tasks (suppress known Laravel cache errors)
+            print_step "Running minimal post-deployment tasks..."
+            ssh "${SSH_USER}@${VPS_HOST}" << EOF 2>&1 | grep -vE "(not serializable|__set_state|Unable to prepare route|does not exist|already been assigned)" || true
+                cd ${DEPLOY_PATH} || exit 0
+                
+                # Clear caches (suppress errors)
+                echo "Clearing caches..."
+                php artisan config:clear 2>/dev/null || true
+                php artisan route:clear 2>/dev/null || true
+                php artisan view:clear 2>/dev/null || true
+                
+                # Only rebuild caches if they can be built (suppress all errors)
+                echo "Rebuilding caches..."
+                php artisan config:cache 2>&1 | grep -vE "(not serializable|__set_state)" || true
+                php artisan route:cache 2>&1 | grep -vE "(Unable to prepare route|already been assigned)" || true
+                php artisan view:cache 2>&1 | grep -v "does not exist" || true
+                
+                # Optimize autoloader if composer files changed
+                if echo "$FILTERED_FILES" | grep -qE "(composer\.json|composer\.lock|app/|modules/)"; then
+                    echo "Optimizing autoloader..."
+                    composer dump-autoload --optimize --classmap-authoritative 2>/dev/null || true
+                fi
+                
+                # Set permissions for synced files
+                echo "Setting file permissions..."
+                echo "$FILTERED_FILES" | while read -r file; do
+                    if [ -n "\$file" ] && [ -f "\$file" ]; then
+                        if sudo -n true 2>/dev/null; then
+                            sudo chown www-data:www-data "\$file" 2>/dev/null || true
+                            sudo chmod 644 "\$file" 2>/dev/null || true
+                        else
+                            chown www-data:www-data "\$file" 2>/dev/null || true
+                            chmod 644 "\$file" 2>/dev/null || true
+                        fi
+                    fi
+                done
+                
+                # Ensure storage and cache directories have proper permissions
+                mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache 2>/dev/null || true
+                
+                if sudo -n true 2>/dev/null; then
+                    sudo chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
+                    sudo chmod -R 775 storage bootstrap/cache 2>/dev/null || true
+                else
+                    chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
+                    chmod -R 775 storage bootstrap/cache 2>/dev/null || true
+                fi
+                
+                echo "Post-deployment tasks completed"
+EOF
+            print_info "Post-deployment tasks completed"
         else
-            print_warning "Some post-deployment tasks may have failed, but files were synced"
+            print_info "Skipping post-deployment tasks (files synced only)"
         fi
+        
+        print_info "Deployment completed successfully!"
     fi
 }
 

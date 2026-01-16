@@ -20,25 +20,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-4">
-                            <label class="form-label">{{ __('Landing page') }}</label>
-                            <div class="d-flex gap-8 flex-column flex-lg-row flex-md-column">
-                                <div class="form-check me-3">
-                                    <input class="form-check-input" type="radio" name="auth_landing_page_status" value="1" id="auth_landing_page_status_1" {{ get_option("auth_landing_page_status", 1)==1?"checked":"" }}>
-                                    <label class="form-check-label mt-1" for="auth_landing_page_status_1">
-                                        {{ __('Enable') }}
-                                    </label>
-                                </div>
-                                <div class="form-check me-3">
-                                    <input class="form-check-input" type="radio" name="auth_landing_page_status" value="0" id="auth_landing_page_status_0"{{ get_option("auth_landing_page_status", 1)==0?"checked":"" }}>
-                                    <label class="form-check-label mt-1" for="auth_landing_page_status_0">
-                                        {{ __('Disable') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="mb-4">
                             <label class="form-label">{{ __('Signup page') }}</label>
                             <div class="d-flex gap-8 flex-column flex-lg-row flex-md-column">
                                 <div class="form-check me-3">
