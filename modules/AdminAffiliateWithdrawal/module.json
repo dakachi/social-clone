@@ -9,26 +9,5 @@
     ],
 
     "files": [],
-    "permission": true,
-    "menu": {
-        "uri": "admin/affiliate-withdrawal",
-        "role": "admin",
-        "platform": 1,
-        "section": "top",
-        "tab_id": 50,
-        "tab_name": "Finance",
-        "position": 50000,
-        "name": "Affiliate",
-        "color": "#ff976f",
-        "icon": "fa-light fa-blog",
-        "sub_menu": [
-            {
-                "uri": "admin/affiliate-withdrawal",
-                "name": "Affiliate Withdrawal",
-                "position": 50,
-                "icon": "fa-light fa-blog",
-                "color": "#0c6b1c"
-            }
-        ]
-    }
+    "permission": true
 }
