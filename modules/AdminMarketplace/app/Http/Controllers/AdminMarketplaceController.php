@@ -21,17 +21,25 @@ class AdminMarketplaceController extends Controller
         ->paginate(20);
 
         $remoteProducts = [];
-        $response = Http::withoutVerifying()->get(self::API_BASE_URL . 'all-products');
+        // Non-blocking API call - continue even if it fails
+        try {
+            $response = Http::withoutVerifying()
+                ->timeout(10)
+                ->get(self::API_BASE_URL . 'all-products');
 
-        if ($response->ok() && isset($response['data'])) {
-            foreach ($response['data'] as $item) {
-                $remoteProducts[$item['product_id']] = [
-                    'version'     => $item['version'],
-                    'name'        => $item['name'] ?? '',
-                    'description' => $item['description'] ?? '',
-                    'thumbnail'   => $item['thumbnail'] ?? null,
-                ];
+            if ($response->ok() && isset($response['data'])) {
+                foreach ($response['data'] as $item) {
+                    $remoteProducts[$item['product_id']] = [
+                        'version'     => $item['version'],
+                        'name'        => $item['name'] ?? '',
+                        'description' => $item['description'] ?? '',
+                        'thumbnail'   => $item['thumbnail'] ?? null,
+                    ];
+                }
             }
+        } catch (\Exception $e) {
+            // Silently continue without remote product info
+            \Log::debug('[Marketplace] Failed to fetch remote products: ' . $e->getMessage());
         }
 
         $addons->getCollection()->transform(function($addon) use ($remoteProducts) {
@@ -77,15 +85,30 @@ class AdminMarketplaceController extends Controller
         $page    = $request->get('page', 1);
         $perPage = $request->get('per_page', 30);
 
-        // Get list of modules from marketplace API
-        $response = Http::withoutVerifying()->get(self::API_BASE_URL . 'products', [
-            'page'     => $page,
-            'per_page' => $perPage,
-            'search'   => $request->get('search'),
-        ]);
+        // Get list of modules from marketplace API (non-blocking)
+        $response = null;
+        try {
+            $response = Http::withoutVerifying()
+                ->timeout(10)
+                ->get(self::API_BASE_URL . 'products', [
+                    'page'     => $page,
+                    'per_page' => $perPage,
+                    'search'   => $request->get('search'),
+                ]);
+        } catch (\Exception $e) {
+            \Log::debug('[Marketplace] Failed to fetch products: ' . $e->getMessage());
+        }
 
-        if (!$response->ok() || !isset($response['data'], $response['meta'])) {
-            return back()->with('error', __('Unable to load Marketplace data.'));
+        if (!$response || !$response->ok() || !isset($response['data'], $response['meta'])) {
+            // Return empty marketplace if API fails
+            $modules = new LengthAwarePaginator(
+                collect([]),
+                0,
+                $perPage,
+                $page,
+                ['path' => $request->url(), 'query' => $request->query()]
+            );
+            return view(module('key') . '::index', compact('modules'));
         }
 
         // Get locally installed addons
@@ -128,10 +151,17 @@ class AdminMarketplaceController extends Controller
 
     public function detail($slug)
     {
-        $response = Http::withoutVerifying()->get(self::API_BASE_URL . 'product-detail/' . $slug);
+        $response = null;
+        try {
+            $response = Http::withoutVerifying()
+                ->timeout(10)
+                ->get(self::API_BASE_URL . 'product-detail/' . $slug);
+        } catch (\Exception $e) {
+            \Log::debug('[Marketplace] Failed to fetch product detail: ' . $e->getMessage());
+        }
 
-        if (!$response->ok() || empty($response['product'])) {
-            return redirect()->route('admin.marketplace.index')->with('error', 'Module not found.');
+        if (!$response || !$response->ok() || empty($response['product'])) {
+            return redirect()->route('admin.marketplace.index')->with('error', 'Module not found or marketplace unavailable.');
         }
 
         $product   = $response['product'];
@@ -163,36 +193,62 @@ class AdminMarketplaceController extends Controller
 
     public function doInstall(Request $request)
     {
+        // Purchase code is now optional - removed validation requirement
         $request->validate([
-            'purchase_code' => 'required|string',
+            'purchase_code' => 'nullable|string',
         ]);
 
         $domain = preg_replace('/^www\./', '', $request->getHost());
-        $purchaseCode = trim(preg_replace('/\s+/', '', $request->purchase_code));
+        $purchaseCode = !empty($request->purchase_code) ? trim(preg_replace('/\s+/', '', $request->purchase_code)) : '';
         $verifyUrl = self::API_BASE_URL . 'install';
 
-        // 1. Call API to verify purchase code and get addon/plugin info
-        $response = Http::withoutVerifying()->post($verifyUrl, [
-            'purchase_code' => $purchaseCode,
-            'domain'        => $domain,
-            'website'       => route('home'),
-        ]);
+        // Skip license verification if no purchase code provided
+        $productId = null;
+        $isMain = 0;
+        $version = null;
+        $installPath = null;
+        $relativePath = null;
+        $moduleName = null;
+        $downloadUrl = null;
 
-        if (!$response->ok() || ($response['status'] ?? 0) != 1) {
-            return response()->json([
-                'status'  => 0,
-                'message' => __($response['message'] ?? 'Purchase verification failed.')
-            ]);
+        // Only attempt API verification if purchase code is provided
+        if (!empty($purchaseCode)) {
+            try {
+                // 1. Call API to verify purchase code and get addon/plugin info
+                $response = Http::withoutVerifying()
+                    ->timeout(15)
+                    ->post($verifyUrl, [
+                        'purchase_code' => $purchaseCode,
+                        'domain'        => $domain,
+                        'website'       => route('home'),
+                    ]);
+
+                if ($response->ok() && ($response['status'] ?? 0) == 1) {
+                    // 2. Get install info from API response
+                    $productId     = $response['product_id']    ?? null;
+                    $isMain        = $response['is_main']       ?? 0;
+                    $version       = $response['version']       ?? null;
+                    $installPath   = base_path($response['install_path'] ?? '');
+                    $relativePath  = $response['install_path'] ?? null;
+                    $moduleName    = $response['module_name'] ?? null;
+                    $downloadUrl   = $response['download_url'] ?? null;
+                } else {
+                    // API verification failed, but continue without blocking
+                    \Log::warning('[Addon Install] Purchase code verification failed: ' . ($response['message'] ?? 'Unknown error'));
+                }
+            } catch (\Exception $e) {
+                // Silently continue without purchase code verification
+                \Log::warning('[Addon Install] Purchase code verification skipped: ' . $e->getMessage());
+            }
         }
 
-        // 2. Get install info from API response
-        $productId     = $response['product_id']    ?? null;
-        $purchaseCode  = $request->purchase_code;
-        $isMain        = $response['is_main']       ?? 0;
-        $version       = $response['version']       ?? null;
-        $installPath   = base_path($response['install_path']);
-        $relativePath  = $response['install_path'];
-        $moduleName    = $response['module_name'];
+        // If no download URL from API, installation cannot proceed (requires manual ZIP upload)
+        if (!$downloadUrl) {
+            return response()->json([
+                'status'  => 0,
+                'message' => __('Purchase code verification failed or no purchase code provided. Please use ZIP upload instead.')
+            ]);
+        }
 
         if (!$productId || !$installPath || !$relativePath) {
             return response()->json([
@@ -202,13 +258,6 @@ class AdminMarketplaceController extends Controller
         }
 
         // 3. Download addon/plugin zip
-        $downloadUrl = $response['download_url'] ?? null;
-        if (!$downloadUrl) {
-            return response()->json([
-                'status'  => 0,
-                'message' => __('Download URL not found.')
-            ]);
-        }
         $tempPath = storage_path('app/addons/tmp_' . \Str::random(8) . '.zip');
         try {
             \File::ensureDirectoryExists(dirname($tempPath));
@@ -390,7 +439,6 @@ class AdminMarketplaceController extends Controller
     {
         $addon = Addon::where('product_id', $productId)
             ->where('source', 1)
-            ->whereNotNull('purchase_code')
             ->first();
 
         if (!$addon) {
@@ -409,27 +457,49 @@ class AdminMarketplaceController extends Controller
 
         $domain = preg_replace('/^www\./', '', $request->getHost());
 
-        // 1. Request the Marketplace server for update info
-        $response = Http::withoutVerifying()->post(self::API_BASE_URL . 'update', [
-            'purchase_code'     => $addon->purchase_code,
-            'product_id'        => $addon->product_id,
-            'current_version'   => $addon->version,
-            'domain'            => $domain,
-            'website'           => route('home'),
+        // 1. Request the Marketplace server for update info (only if purchase code exists)
+        $downloadUrl = null;
+        $latestVersion = null;
+        $relativePath = null;
+        $moduleName = null;
 
-        ]);
+        if (!empty($addon->purchase_code)) {
+            try {
+                $response = Http::withoutVerifying()
+                    ->timeout(15)
+                    ->post(self::API_BASE_URL . 'update', [
+                        'purchase_code'     => $addon->purchase_code,
+                        'product_id'        => $addon->product_id,
+                        'current_version'   => $addon->version,
+                        'domain'            => $domain,
+                        'website'           => route('home'),
+                    ]);
 
-        if (!$response->ok() || ($response['status'] ?? 0) != 1) {
+                if ($response->ok() && ($response['status'] ?? 0) == 1) {
+                    $downloadUrl   = $response['download_url'] ?? null;
+                    $latestVersion = $response['latest_version'] ?? null;
+                    $relativePath  = $response['install_path'] ?? null;
+                    $moduleName    = $response['module_name'] ?? null;
+                } else {
+                    return response()->json([
+                        'status'  => 0,
+                        'message' => $response['message'] ?? __('No update available.'),
+                    ]);
+                }
+            } catch (\Exception $e) {
+                \Log::warning('[Addon Update] API call failed: ' . $e->getMessage());
+                return response()->json([
+                    'status'  => 0,
+                    'message' => __('Unable to check for updates. Please try again later.'),
+                ]);
+            }
+        } else {
             return response()->json([
                 'status'  => 0,
-                'message' => $response['message'] ?? __('No update available.'),
+                'message' => __('No purchase code found. Updates are only available for marketplace-installed addons.'),
             ]);
         }
 
-        $downloadUrl   = $response['download_url'] ?? null;
-        $latestVersion = $response['latest_version'] ?? null;
-        $relativePath  = $response['install_path'] ?? null;
-        $moduleName    = $response['module_name'] ?? null;
         $installPath   = $relativePath ? realpath( base_path($relativePath) ) : null;
 
         // Validate response fields

@@ -75,12 +75,12 @@
         </div>
     </div>
     <div class="space-y-6">
-        <!-- Purchase Code Card -->
+        <!-- Purchase Code Card (Optional) -->
         <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <div class="flex items-center space-x-3 mb-6">
                 <div>
-                    <h3 class="text-xl font-bold text-slate-900">Purchase Code</h3>
-                    <p class="text-sm text-slate-600">Provide your purchase code for activation</p>
+                    <h3 class="text-xl font-bold text-slate-900">Purchase Code <span class="text-sm font-normal text-slate-500">(Optional)</span></h3>
+                    <p class="text-sm text-slate-600">Optionally provide your purchase code for activation</p>
                 </div>
             </div>
             <div class="grid md:grid-cols-1 gap-6">
@@ -88,7 +88,7 @@
                     <input name="purchase_code"
                         class="config-input purchase-code w-full py-3 px-4 text-slate-600 leading-tight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-opacity-50 border border-slate-300 rounded-xl shadow-sm transition-all duration-200 focus:shadow-md"
                         type="text"
-                        placeholder="Enter your purchase code"
+                        placeholder="Enter your purchase code (optional)"
                     />
                 </div>
             </div>

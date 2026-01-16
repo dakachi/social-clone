@@ -47,6 +47,29 @@ if (!function_exists('base_path')) {
     }
 }
 
+if (!function_exists('env')) {
+    function env($key, $default = null) {
+        // Simple env() helper for installer - reads from .env file if it exists
+        static $envVars = null;
+        
+        if ($envVars === null) {
+            $envVars = [];
+            $envFile = base_path('.env');
+            if (file_exists($envFile)) {
+                $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                foreach ($lines as $line) {
+                    if (strpos(trim($line), '#') === 0) continue;
+                    if (preg_match('/^([A-Z0-9_]+)\s*=\s*(.*)$/i', $line, $matches)) {
+                        $envVars[$matches[1]] = trim($matches[2], '"\'');
+                    }
+                }
+            }
+        }
+        
+        return $envVars[$key] ?? $default;
+    }
+}
+
 if (!function_exists('get_all_timezones_with_offset')) {
     function get_all_timezones_with_offset() {
         $timezones = [];
