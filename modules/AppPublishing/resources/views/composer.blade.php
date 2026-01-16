@@ -108,6 +108,10 @@ if($post){
                                         <a href="javascript:void(0);" class="px-3 py-2 d-block text-gray-700 generalAIContent" data-url="{{ route('app.ai-contents.create_content') }}" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="top" data-bs-title="{{ __('AI Content') }}" data-bs-html="true" data-bs-content="{!! __('Enter a prompt in the caption box and click this button. Our AI will generate the perfect content for you with just one click.<br/><br/><b>Example:</b> Create a motivational quote for Monday morning.') !!}"><i class="fa-light fa-wand-magic-sparkles p-0"></i></a>
                                     </div>
                                     @endif
+                                    
+                                    <div class="border-start">
+                                        <a href="javascript:void(0);" class="px-3 py-2 d-block text-gray-700 validatorLink" data-bs-title="{{ __('Content Validator') }}" data-bs-toggle="tooltip" data-bs-placement="top"><i class="fa-light fa-check-circle p-0"></i></a>
+                                    </div>
 
                                     @if(get_option("url_shorteners_platform", 0) && Gate::allows('appmediasearch'))
                                     <div class="border-start">

@@ -57,6 +57,56 @@ var AppPubishing = new (function ()
             $(".compose-preview").addClass("active");
         });
 
+        $(document).on("click", ".validatorLink", function(e){
+            e.preventDefault();
+            
+            var content = "";
+            var imageUrl = "";
+            var videoUrl = "";
+            
+            if ($(".post-caption").length > 0 && $(".post-caption")[0].emojioneArea) {
+                content = $(".post-caption")[0].emojioneArea.getText();
+            } else {
+                content = $('textarea[name="caption"]').val() || "";
+            }
+            
+            var imageUrls = [];
+            var videoUrls = [];
+            
+            $('.file-selected-media .file-item').each(function() {
+                var fileType = $(this).data('type');
+                var fileUrl = $(this).data('file');
+                
+                if (fileType === 'image' && fileUrl) {
+                    imageUrls.push(fileUrl);
+                } else if (fileType === 'video' && fileUrl) {
+                    videoUrls.push(fileUrl);
+                }
+            });
+            
+            imageUrl = imageUrls.length > 0 ? imageUrls[0] : "";
+            videoUrl = videoUrls.length > 0 ? videoUrls[0] : "";
+            
+            var validatorUrl = "https://validator.1bit.vn/";
+            var params = new URLSearchParams();
+            
+            if (content) {
+                params.append('content', content);
+            }
+            if (imageUrl) {
+                params.append('image_url', imageUrl);
+            }
+            if (videoUrl) {
+                params.append('video_url', videoUrl);
+            }
+            
+            if (params.toString()) {
+                validatorUrl += "?" + params.toString();
+            }
+            
+            window.open(validatorUrl, '_blank');
+        });
+
         var type = $(".compose-type input:checked").val();
         AppPubishing.composeType(type);
 

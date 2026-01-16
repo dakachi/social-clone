@@ -111,3 +111,6 @@ stackposts
 
 # Misc
 .htpasswd
+.env.deploy
+setup-manual.sh
+db_structure_vtv1bit_20260108_032004.sql
